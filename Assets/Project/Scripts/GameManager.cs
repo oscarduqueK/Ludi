@@ -2,15 +2,21 @@
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; // singleton
+    public static GameManager Instance;
 
     public string basuraTag = "Basura";
     private bool gameEnded = false;
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void GameOver(bool won)
@@ -26,10 +32,9 @@ public class GameManager : MonoBehaviour
     {
         if (gameEnded) return;
 
-        // Comprueba si no queda basura
         if (GameObject.FindGameObjectsWithTag(basuraTag).Length == 0)
         {
-            GameOver(true); // has ganado
+            GameOver(true);
         }
     }
 }
