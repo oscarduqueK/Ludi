@@ -9,6 +9,9 @@ TagManager:
   - Flipper
   - Entorno
   - Ground
+  - Resume
+  - Options
+  - Exit
   layers:
   - Default
   - TransparentFX
