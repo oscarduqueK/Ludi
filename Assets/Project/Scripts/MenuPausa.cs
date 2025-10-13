@@ -17,4 +17,9 @@ public class MenuPausaUI : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void GoToGame()
+    {
+        SceneManager.LoadScene("Pinball");
+    }
 }

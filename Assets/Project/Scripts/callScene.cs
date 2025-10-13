@@ -16,8 +16,6 @@ public class callScene : MonoBehaviour
         //    Destroy(gameObject);
         //}
     }
-
-    // Update is called once per frame
     void Update()
     {
         //Load scene 1
