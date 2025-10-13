@@ -21,14 +21,14 @@ public class callScene : MonoBehaviour
     void Update()
     {
         //Load scene 1
-        Scene scene = SceneManager.GetSceneByName("MenuPause");
+        Scene scene = SceneManager.GetSceneByName("MenuPausa");
         if (Input.GetKeyDown(KeyCode.Escape) && !scene.isLoaded)
         {
-            SceneManager.LoadScene("MenuPause", LoadSceneMode.Additive);
+            SceneManager.LoadScene("MenuPausa", LoadSceneMode.Additive);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && scene.isLoaded)
         {
-            SceneManager.UnloadSceneAsync("MenuPause");
+            SceneManager.UnloadSceneAsync("MenuPausa");
         }
     }
 }

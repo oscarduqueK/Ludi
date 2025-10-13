@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Pinball.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Project/Scenes/MenuOptions.unity
+    guid: aef971a97f4207d40a4d0415f2c4611d
+  - enabled: 1
+    path: Assets/Project/Scenes/MenuPausa.unity
+    guid: cf30ef18ca02f7d4e838e147148f3aa5
+  - enabled: 1
+    path: Assets/Project/Scenes/Menu.unity
+    guid: fa45e8a0c04838e4b870b7137c24064c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
