@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Basura : MonoBehaviour
@@ -11,3 +12,4 @@ public class Basura : MonoBehaviour
         }
     }
 }
+
