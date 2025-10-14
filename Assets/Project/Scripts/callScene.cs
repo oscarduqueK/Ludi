@@ -3,19 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class callScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //if (testSingleton.Instance == null)
-        //{
-        //    Instance = this;
-        //    DontDestroyOnLoad(gameObject); // opcional, si quieres que sobreviva a los cambios de escena
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-    }
     void Update()
     {
         //Load scene 1
@@ -23,10 +10,12 @@ public class callScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !scene.isLoaded)
         {
             SceneManager.LoadScene("MenuPausa", LoadSceneMode.Additive);
+            Time.timeScale = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && scene.isLoaded)
         {
             SceneManager.UnloadSceneAsync("MenuPausa");
+            Time.timeScale = 1f;
         }
     }
 }
