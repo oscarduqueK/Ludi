@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Basura : MonoBehaviour
@@ -11,3 +12,20 @@ public class Basura : MonoBehaviour
         }
     }
 }
+
+public class Tipo1 : Basura
+{
+
+}
+
+public class Tipo2 : Basura
+{
+
+}
+
+public class Tipo3 : Basura
+{
+
+}
+
+
