@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public string basuraTag = "Basura";
     private bool gameEnded = false;
 
     void Awake()
@@ -21,18 +21,32 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(bool won)
     {
-        if (gameEnded) return;
+        if (gameEnded)
+        {
+            return;
+        }
         gameEnded = true;
 
-        if (won) Debug.Log("¡Has ganado!");
-        else Debug.Log("¡Has perdido!");
+        if (won)
+        {
+            Debug.Log("¡Has ganado!");
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("Win", LoadSceneMode.Additive);
+        }
+        else
+        {
+            Debug.Log("¡Has perdido!");
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
+        }
     }
-
     void Update()
     {
-        if (gameEnded) return;
-
-        if (GameObject.FindGameObjectsWithTag(basuraTag).Length == 0)
+        if (gameEnded)
+        {
+            return;
+        }
+        if (GameObject.FindGameObjectsWithTag("Basura").Length == 0)
         {
             GameOver(true);
         }

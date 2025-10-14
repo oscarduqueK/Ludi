@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Menu.unity
     guid: fa45e8a0c04838e4b870b7137c24064c
+  - enabled: 1
+    path: Assets/Project/Scenes/Lose.unity
+    guid: 309e86b3ebaf5584e89c52a45d974273
+  - enabled: 1
+    path: Assets/Project/Scenes/Win.unity
+    guid: 89235e04a7513ce4785f1dcac64d0090
+  - enabled: 1
+    path: Assets/Project/Scenes/Aquario.unity
+    guid: 6d33b596fba9f30498a32fcd6dc07518
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

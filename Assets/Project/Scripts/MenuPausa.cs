@@ -25,7 +25,6 @@ public class MenuPausaUI : MonoBehaviour
             SceneManager.LoadScene("MenuOptions", LoadSceneMode.Additive);
         }
     }
-
     [System.Obsolete]
     public void GoBackFromOptions()
     {
@@ -38,15 +37,17 @@ public class MenuPausaUI : MonoBehaviour
             SceneManager.UnloadScene("MenuOptions");
         }
     }
-
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Menu");
     }
-
     public void GoToGame()
     {
         SceneManager.LoadScene("Pinball");
         Time.timeScale = 1f;
+    }
+    public void GoToAquario()
+    {
+        SceneManager.LoadScene("Aquario");
     }
 }
