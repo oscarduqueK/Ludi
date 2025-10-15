@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5148718983232467318}
   - component: {fileID: 1015209795449370327}
   - component: {fileID: 5084387237373881575}
+  - component: {fileID: -2238182459824161699}
   m_Layer: 0
   m_Name: trash 8
-  m_TagString: Untagged
+  m_TagString: Basura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,3 +184,15 @@ PolygonCollider2D:
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
   m_UseDelaunayMesh: 0
+--- !u!114 &-2238182459824161699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5709977270816691041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd9bfafacbe8094a97e11c64b2f3986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

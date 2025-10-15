@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public int requiredTrashToWin = 2;
+    private int trashCollected = 0;
 
     private bool gameEnded = false;
 
@@ -19,36 +21,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddTrash(int amount = 1)
+    {
+        if (gameEnded) return;
+
+        trashCollected += amount;
+        Debug.Log("suma");
+
+        if (trashCollected >= requiredTrashToWin)
+        {
+            GameOver(true);
+        }
+    }
+
     public void GameOver(bool won)
     {
-        if (gameEnded)
-        {
-            return;
-        }
+        if (gameEnded) return;
         gameEnded = true;
 
         if (won)
         {
-            Debug.Log("¡Has ganado!");
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; 
             SceneManager.LoadScene("Win", LoadSceneMode.Additive);
         }
         else
         {
-            Debug.Log("¡Has perdido!");
             Time.timeScale = 0f;
             SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
-        }
-    }
-    void Update()
-    {
-        if (gameEnded)
-        {
-            return;
-        }
-        if (GameObject.FindGameObjectsWithTag("Basura").Length == 0)
-        {
-            GameOver(true);
         }
     }
 }

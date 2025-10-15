@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class Basura : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        // Si choca con la pelota
-        if (collision.gameObject.CompareTag("Ball") || collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            Destroy(gameObject); // elimina la basura
+            Destroy(this.gameObject); 
+            GameManager.Instance.AddTrash(1);
+        }
+        else if ( collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(this.gameObject);
         }
     }
 }
