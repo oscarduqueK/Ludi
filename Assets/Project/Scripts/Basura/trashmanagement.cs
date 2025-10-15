@@ -7,15 +7,18 @@ public class trashmanagement : MonoBehaviour
     public float spawnInterval;
     public List <Transform> spawnPoint;
 
-    private levelConfig currentLevel; 
-    private float timer;
+    public levelConfig currentLevel; //Cambiar más adelante, está público para pruebas
+    [Range(1, 10)] public int LevelIndexInspector; //para seleccionar desde el inspector
 
-    public int spawnIndex;
+    public int spawnPointIndex; 
+
+    private float timer;
 
     void Start()
     {
-        currentLevel = new level1();
-        currentLevel.SetupLevel(this);
+        currentLevel = AssociateLevel(LevelIndexInspector); //se crea automáticamente
+        if (currentLevel != null) currentLevel.SetupLevel(this);
+        else Debug.LogError("No existe configuración para el nivel {LevelIndexInspector}");
     }
 
     void Update()
@@ -28,5 +31,16 @@ public class trashmanagement : MonoBehaviour
         }
     }
 
+    levelConfig AssociateLevel (int number)
+    {
+        switch (number)
+        {
+            case 1: return new level1();
+            case 2: return new level2();
+
+
+            default: return null;
+        }
+    }
 }
 

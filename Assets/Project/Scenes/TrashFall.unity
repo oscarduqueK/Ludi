@@ -262,11 +262,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashPrefabs:
-  - {fileID: 6124000369213536336, guid: 4b2986b18f03c384ca3b3e3e826778ca, type: 3}
   - {fileID: 5709977270816691041, guid: cd4e1ad1d231166418f86cde55a058fc, type: 3}
-  - {fileID: 5344101500559015325, guid: becee27cfbfe93b41b6625360fb3757c, type: 3}
-  - {fileID: 4252772945950594544, guid: e44311e8fa45e494d9130e2c01795bb4, type: 3}
-  - {fileID: 345881563471380761, guid: 0522ee4b0fcb2b94685851084bdc4fa4, type: 3}
+  - {fileID: 5709977270816691041, guid: 6e99f32c21af76b43b2255555ab48e0a, type: 3}
+  - {fileID: 5709977270816691041, guid: 87932c781580ad840b062bfe384acdef, type: 3}
+  - {fileID: 5709977270816691041, guid: 05b71511ddd016b4d872e40d727205fa, type: 3}
+  - {fileID: 5709977270816691041, guid: 556fc4f022fdfa94a8f8c4d679e5f000, type: 3}
+  - {fileID: 5709977270816691041, guid: 8b4e1694dc92ed7479bb7a1e3a267496, type: 3}
+  - {fileID: 5709977270816691041, guid: 0fb0644bae12c2246a7afa42c6a026ba, type: 3}
+  - {fileID: 5709977270816691041, guid: 875285b97eca4f04a8db90507a6d87c7, type: 3}
+  - {fileID: 5709977270816691041, guid: bb51ac300148b02479e7327755e5829f, type: 3}
+  - {fileID: 5709977270816691041, guid: a831dc9ddc3189441a425299e0a2d8bc, type: 3}
+  - {fileID: 5709977270816691041, guid: 30b53021909f4134c84c44bd4de56680, type: 3}
+  - {fileID: 5709977270816691041, guid: 664d9386f261a974ca247cb53af24342, type: 3}
   spawnInterval: 1.5
   spawnPoint:
   - {fileID: 803361358}
@@ -274,6 +281,8 @@ MonoBehaviour:
   - {fileID: 1571894905}
   - {fileID: 333142167}
   - {fileID: 201200710}
+  LevelIndexInspector: 2
+  spawnPointIndex: 0
 --- !u!1 &1571894904
 GameObject:
   m_ObjectHideFlags: 0
