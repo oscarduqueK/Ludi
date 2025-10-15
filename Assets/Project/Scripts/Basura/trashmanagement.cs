@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class trashmanagement : MonoBehaviour
 {
-
     public List<GameObject> trashPrefabs; 
     public float spawnInterval;
-    public Transform spawnPoint;
+    public List <Transform> spawnPoint;
 
     private levelConfig currentLevel; 
     private float timer;
+
+    public int spawnIndex;
 
     void Start()
     {
@@ -22,17 +23,10 @@ public class trashmanagement : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            SpawnTrash();
+            currentLevel.SpawnTrash(this);
             timer = 0f;
         }
     }
 
-    void SpawnTrash()
-    {
-        if (trashPrefabs.Count == 0) return;
-
-        int index = Random.Range(0, trashPrefabs.Count);
-        GameObject trash = Instantiate(trashPrefabs[index], spawnPoint.position, Quaternion.identity);
-    }
 }
 
