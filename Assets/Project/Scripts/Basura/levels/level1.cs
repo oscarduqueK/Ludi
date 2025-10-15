@@ -16,8 +16,8 @@ public class level1 : levelConfig
         generator.spawnInterval = 2f;
 
         //Gestion de los spawnPoints
-        Transform indexSpanwPoint = generator.spawnPoint[generator.spawnPointIndex];
-        generator.spawnPointIndex = Random.Range(0, generator.spawnPoint.Count);
+        Transform indexSpanwPoint = generator.spawnPoint[generator.spawnPointIndex]; 
+        generator.spawnPointIndex = Random.Range(0, generator.spawnPoint.Count); 
 
         //Gestión de los Prefabs 
         int index = Random.Range(0, generator.trashPrefabs.Count);
