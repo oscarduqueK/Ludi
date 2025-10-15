@@ -3,18 +3,22 @@ using UnityEngine;
 
 public class trashmanagement : MonoBehaviour
 {
-
     public List<GameObject> trashPrefabs; 
     public float spawnInterval;
-    public Transform spawnPoint;
+    public List <Transform> spawnPoint;
 
-    private levelConfig currentLevel; 
+    public levelConfig currentLevel; //Cambiar más adelante, está público para pruebas
+    [Range(1, 10)] public int LevelIndexInspector; //para seleccionar desde el inspector
+
+    public int spawnPointIndex; 
+
     private float timer;
 
     void Start()
     {
-        currentLevel = new level1();
-        currentLevel.SetupLevel(this);
+        currentLevel = AssociateLevel(LevelIndexInspector); //se crea automáticamente
+        if (currentLevel != null) currentLevel.SetupLevel(this);
+        else Debug.LogError("No existe configuración para el nivel {LevelIndexInspector}");
     }
 
     void Update()
@@ -22,17 +26,21 @@ public class trashmanagement : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            SpawnTrash();
+            currentLevel.SpawnTrash(this);
             timer = 0f;
         }
     }
 
-    void SpawnTrash()
+    levelConfig AssociateLevel (int number)
     {
-        if (trashPrefabs.Count == 0) return;
+        switch (number)
+        {
+            case 1: return new level1();
+            case 2: return new level2();
 
-        int index = Random.Range(0, trashPrefabs.Count);
-        GameObject trash = Instantiate(trashPrefabs[index], spawnPoint.position, Quaternion.identity);
+
+            default: return null;
+        }
     }
 }
 
