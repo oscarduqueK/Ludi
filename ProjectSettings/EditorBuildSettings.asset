@@ -6,17 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Project/Scenes/Menu.unity
+    guid: fa45e8a0c04838e4b870b7137c24064c
+  - enabled: 1
     path: Assets/Project/Scenes/Pinball.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 0
+    path: Assets/Project/Scenes/Niveles/Pinball 1.unity
+    guid: e81e88aad147b9047a69ab3fe8fad1f6
+  - enabled: 0
+    path: Assets/Project/Scenes/Niveles/Pinball 2.unity
+    guid: 212f84c01ca34524daf041520df0f60b
   - enabled: 1
     path: Assets/Project/Scenes/MenuOptions.unity
     guid: aef971a97f4207d40a4d0415f2c4611d
   - enabled: 1
     path: Assets/Project/Scenes/MenuPausa.unity
     guid: cf30ef18ca02f7d4e838e147148f3aa5
-  - enabled: 1
-    path: Assets/Project/Scenes/Menu.unity
-    guid: fa45e8a0c04838e4b870b7137c24064c
   - enabled: 1
     path: Assets/Project/Scenes/Lose.unity
     guid: 309e86b3ebaf5584e89c52a45d974273

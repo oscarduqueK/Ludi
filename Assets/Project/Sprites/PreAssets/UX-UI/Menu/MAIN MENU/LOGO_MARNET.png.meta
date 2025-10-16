@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LOGO_MARNET_0: -7617506171458654732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
