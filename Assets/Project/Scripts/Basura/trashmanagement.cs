@@ -3,13 +3,17 @@ using UnityEngine;
 
 public class trashmanagement : MonoBehaviour
 {
-    public List<GameObject> trashPrefabs; 
+    public List<GameObject> trashPrefabs;
+
+    [HideInInspector]
     public float spawnInterval;
+
     public List <Transform> spawnPoint;
 
     public levelConfig currentLevel; //Cambiar más adelante, está público para pruebas
     [Range(1, 10)] public int LevelIndexInspector; //para seleccionar desde el inspector
 
+    [HideInInspector]
     public int spawnPointIndex; 
 
     private float timer;

@@ -4,10 +4,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int requiredTrashToWin = 2;
+
+    [HideInInspector]
+    public int requiredTrashToWin;
+
     private int trashCollected = 0;
 
     private bool gameEnded = false;
+
+    public bool isImmortal;
 
     void Awake()
     {
@@ -36,6 +41,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(bool won)
     {
+        if (isImmortal && !won)
+        {
+            Debug.Log("El jugador es inmortal, ignorando derrota");
+            return;
+        }
+
         if (gameEnded) return;
         gameEnded = true;
 
