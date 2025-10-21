@@ -43,13 +43,13 @@ public class MenuPausaUI : MonoBehaviour
     }
     public void GoToGame()
     {
-        SceneManager.LoadScene("Pinball");
+        SceneManager.LoadScene("LevelSelector");
         Time.timeScale = 1f;
     }
 
     public void GoToNextLevel()
     {
-        SceneManager.LoadScene("Pinball");
+        SceneManager.LoadScene("LevelSelector");
         Time.timeScale = 1f;
     }
     public void GoToAquario()
