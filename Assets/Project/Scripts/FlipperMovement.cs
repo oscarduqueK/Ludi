@@ -1,14 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlipperMovement2D : MonoBehaviour
 {
-
     public KeyCode key;
     public bool invert = false;
-    public float motorSpeed = 1000f;
-    public float motorForce = 8000f;
-    public float restAngle = 0f;
-    public float pressedAngle = 45f;
+    public float motorSpeed;
+    public float motorForce;
+    public float restAngle;
+    public float pressedAngle;
+
     private HingeJoint2D hinge;
     private JointMotor2D motor;
     private JointAngleLimits2D limits;
@@ -23,6 +23,15 @@ public class FlipperMovement2D : MonoBehaviour
         hinge.useLimits = true;
         hinge.useMotor = true;
 
+        // 👇 Si está invertido, intercambiamos los ángulos
+        if (invert)
+        {
+            float temp = restAngle;
+            restAngle = pressedAngle;
+            pressedAngle = temp;
+        }
+
+        // 👇 Establecemos los límites correctamente
         limits.min = Mathf.Min(restAngle, pressedAngle);
         limits.max = Mathf.Max(restAngle, pressedAngle);
         hinge.limits = limits;
@@ -33,6 +42,8 @@ public class FlipperMovement2D : MonoBehaviour
         pressed = Input.GetKey(key);
 
         float direction = pressed ? 1f : -1f;
+
+        // 👇 Invertimos solo la dirección del motor
         if (invert) direction *= -1f;
 
         motor.motorSpeed = motorSpeed * direction;
