@@ -12,15 +12,13 @@ public class GameManager : MonoBehaviour
 
     private bool gameEnded = false;
 
-    public bool isImmortal;
-
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-        else
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -41,24 +39,24 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(bool won)
     {
-        if (isImmortal && !won)
-        {
-            Debug.Log("El jugador es inmortal, ignorando derrota");
-            return;
-        }
-
         if (gameEnded) return;
         gameEnded = true;
 
         if (won)
         {
-            Time.timeScale = 0f; 
             SceneManager.LoadScene("Win", LoadSceneMode.Additive);
+            Time.timeScale = 0f;
         }
         else
         {
-            Time.timeScale = 0f;
             SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
+            Time.timeScale = 0f;
         }
+    }
+    public void ResetGame()
+    {
+        trashCollected = 0;
+        gameEnded = false;
+        Time.timeScale = 1f;
     }
 }
