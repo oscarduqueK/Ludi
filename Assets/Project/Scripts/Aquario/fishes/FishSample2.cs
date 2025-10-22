@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class FishSample3 : Fish
+public class FishSample2 : Fish
 {
     public override void ViewInfo(Aquarium aquarium)
     {
-        aquarium.infoText.text = "Duro";
+        aquarium.infoText.text = "Gerte";
     }
 }
