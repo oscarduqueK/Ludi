@@ -12,6 +12,7 @@ TagManager:
   - Resume
   - Options
   - Exit
+  - Rampa
   layers:
   - Default
   - TransparentFX
