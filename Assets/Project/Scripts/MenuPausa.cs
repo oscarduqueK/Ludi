@@ -44,6 +44,7 @@ public class MenuPausaUI : MonoBehaviour
     public void GoToSelectorLevel()
     {
         SceneManager.LoadScene("LevelSelector");
+        Time.timeScale = 1f;
     }
     public void GoToAquario()
     {
