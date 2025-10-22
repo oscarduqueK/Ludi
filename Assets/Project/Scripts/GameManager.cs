@@ -9,10 +9,9 @@ public class GameManager : MonoBehaviour
     public int requiredTrashToWin;
 
     private int trashCollected = 0;
+    public int vidas = 3;
 
     private bool gameEnded = false;
-
-    public bool isImmortal;
 
     void Awake()
     {
@@ -20,7 +19,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -31,7 +30,7 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return;
 
         trashCollected += amount;
-        Debug.Log("suma");
+        Debug.Log("Basura recogida: " + trashCollected);
 
         if (trashCollected >= requiredTrashToWin)
         {
@@ -39,26 +38,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RestarVida()
+    {
+        if (gameEnded) return;
+
+        vidas--;
+        Debug.Log("Vida perdida. Vidas restantes: " + vidas);
+
+        if (vidas <= 0)
+        {
+            GameOver(false);
+        }
+    }
+
     public void GameOver(bool won)
     {
-        if (isImmortal && !won)
-        {
-            Debug.Log("El jugador es inmortal, ignorando derrota");
-            return;
-        }
-
         if (gameEnded) return;
         gameEnded = true;
 
         if (won)
         {
-            Time.timeScale = 0f; 
             SceneManager.LoadScene("Win", LoadSceneMode.Additive);
         }
         else
         {
-            Time.timeScale = 0f;
             SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
         }
+
+        Time.timeScale = 0f;
+    }
+
+    public void ResetGame()
+    {
+        trashCollected = 0;
+        vidas = 3;
+        gameEnded = false;
+        Time.timeScale = 1f;
     }
 }

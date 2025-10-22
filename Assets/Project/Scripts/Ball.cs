@@ -6,7 +6,6 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("¡Has perdido!");
             Destroy(gameObject);
             GameManager.Instance.GameOver(false);
         }

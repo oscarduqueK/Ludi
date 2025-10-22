@@ -1,14 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlipperMovement2D : MonoBehaviour
 {
 
     public KeyCode key;
     public bool invert = false;
-    public float motorSpeed = 1000f;
-    public float motorForce = 8000f;
-    public float restAngle = 0f;
-    public float pressedAngle = 45f;
+    public float motorSpeed;
+    public float motorForce;
+    public float restAngle;
+    public float pressedAngle;
     private HingeJoint2D hinge;
     private JointMotor2D motor;
     private JointAngleLimits2D limits;

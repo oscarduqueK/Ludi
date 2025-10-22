@@ -7,29 +7,15 @@ public class Basura : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Destroy(this.gameObject); 
+            Destroy(this.gameObject);
             GameManager.Instance.AddTrash(1);
         }
-        else if ( collision.gameObject.CompareTag("Ground"))
+        else if (collision.gameObject.CompareTag("Rampa") || collision.gameObject.CompareTag("Flipper") || collision.gameObject.CompareTag("Ground"))
         {
+            GameManager.Instance.RestarVida();
             Destroy(this.gameObject);
         }
     }
-}
-
-public class Tipo1 : Basura
-{
-
-}
-
-public class Tipo2 : Basura
-{
-
-}
-
-public class Tipo3 : Basura
-{
-
 }
 
 
