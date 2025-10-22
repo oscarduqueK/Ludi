@@ -4,26 +4,23 @@ using UnityEngine;
 public class trashmanagement : MonoBehaviour
 {
     public List<GameObject> trashPrefabs;
-
-    [HideInInspector]
     public float spawnInterval;
+    public List<Transform> spawnPoint;
 
-    public List <Transform> spawnPoint;
-
-    public levelConfig currentLevel; //Cambiar más adelante, está público para pruebas
-
-    [Range(1, 10)] public int LevelIndexInspector; //para seleccionar desde el inspector
-
-    [HideInInspector]
-    public int spawnPointIndex; 
+    public levelConfig currentLevel; // se crea automáticamente
+    public int spawnPointIndex;
 
     private float timer;
 
     void Start()
     {
-        currentLevel = AssociateLevel(LevelIndexInspector); //se crea automáticamente
-        if (currentLevel != null) currentLevel.SetupLevel(this);
-        else Debug.LogError("No existe configuración para el nivel {LevelIndexInspector}");
+        int levelToLoad = PlayerPrefs.GetInt("LevelToLoad", 1);
+
+        currentLevel = AssociateLevel(levelToLoad);
+        if (currentLevel != null)
+            currentLevel.SetupLevel(this);
+        else
+            Debug.LogError($"No existe configuración para el nivel {levelToLoad}");
     }
 
     void Update()
@@ -36,7 +33,7 @@ public class trashmanagement : MonoBehaviour
         }
     }
 
-    levelConfig AssociateLevel (int number)
+    levelConfig AssociateLevel(int number)
     {
         switch (number)
         {
@@ -44,8 +41,14 @@ public class trashmanagement : MonoBehaviour
             case 2: return new level2();
             case 3: return new level3();
 
+            //case 4: return new level4();
+            //case 5: return new level5();
+            //case 6: return new level6();
+            //case 7: return new level7();
+            //case 8: return new level8();
+            //case 9: return new level9();
+            //case 10: return new level10();
             default: return null;
         }
     }
 }
-
