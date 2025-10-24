@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PEZ_PAYASO 1_0: -2696520268244763151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

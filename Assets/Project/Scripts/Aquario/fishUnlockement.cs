@@ -9,10 +9,24 @@ public class fishUnlockement : MonoBehaviour
     private Event PopBubble;
     private Event LoUnlockFish;
 
-    public void UnlockSequence()
+    public Fish GetFish(int fishId)
     {
-        if (currentFishLogic.isFishUnlocked == false)
+        return aquarium.AssociateFish(fishId);
+    }
+
+    public bool UnlockSequence(int fishId)
+    {
+        Fish currentFish = aquarium.AssociateFish(fishId);
+
+        if (currentFish != null && !currentFish.isFishUnlocked)
         {
+            currentFish.isFishUnlocked = true;
+            Debug.Log("Change to unlockement secuence");
+
+            //Pendiente por poner cosas de la animacion etc...
+            return true;
         }
+
+        return false;
     }
 }

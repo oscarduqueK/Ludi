@@ -155,7 +155,7 @@ public class Aquarium : MonoBehaviour
             ShowFishInfo();
     }
 
-    private Fish AssociateFish(int index)
+    public Fish AssociateFish(int index)
     {
         switch (index)
         {

@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private trashmanagement tm;
+    [SerializeField] private fishUnlockement fu;
+
+    private Fish currentFish;
+
     [HideInInspector]
     public int requiredTrashToWin;
 
@@ -58,7 +63,18 @@ public class GameManager : MonoBehaviour
 
         if (won)
         {
-            SceneManager.LoadScene("Win");
+            int fishId = tm.currentLevel.GetFishId();
+
+            bool unlockedNow = false;
+            if (fu != null && fishId >= 0)
+            {
+                unlockedNow = fu.UnlockSequence(fishId);
+            }
+
+            if (unlockedNow)
+                SceneManager.LoadScene("Win", LoadSceneMode.Additive);
+            else
+                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive);
         }
         else
         {
@@ -66,6 +82,20 @@ public class GameManager : MonoBehaviour
         }
 
         Time.timeScale = 0f;
+    }
+
+    private void TryToUnlockFish()
+    {
+        if (tm.currentLevel == null) return;
+
+        int fishId = tm.currentLevel.GetFishId();
+
+
+        if (fu != null && fishId >= 0)
+        {
+            currentFish = fu.GetFish(fishId);
+            fu.UnlockSequence(fishId);
+        }
     }
 
     public void ResetGame()

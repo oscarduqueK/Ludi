@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/LevelSelector2.unity
     guid: c98f4859fd4e64f44b7a64b91fdb7b8e
+  - enabled: 1
+    path: Assets/Project/Scenes/Win4secondTime.unity
+    guid: 8878bf18857078a48ad43279f1f1135f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

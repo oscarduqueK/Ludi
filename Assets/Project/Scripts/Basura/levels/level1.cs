@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class level1 : levelConfig
 {
+    public new int fishToUnlock = 0;
     public override void SetupLevel(trashmanagement generator)
     {
         Debug.Log("Nivel 1 configurado");
@@ -14,7 +15,7 @@ public class level1 : levelConfig
 
         //Intervalo y verificación de funcionamiento
         if (generator.trashPrefabs.Count == 0) return;
-        generator.spawnInterval = 3.5f;
+        generator.spawnInterval = 2.5f;
 
         //Gestion de los spawnPoints
         generator.spawnPointIndex = Random.Range(2, generator.spawnPoint.Count -2);
