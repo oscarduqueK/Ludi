@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         if (won)
         {
-            SceneManager.LoadScene("Win", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Win");
         }
         else
         {

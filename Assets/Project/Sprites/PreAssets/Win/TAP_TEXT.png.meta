@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 8152c33e33842b94b8e91cf959670717
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2475041017337298667
+    second: TAP_TEXT_0
+  - first:
+      213: 6869488401408449682
+    second: TAP_TEXT_1
+  - first:
+      213: -8073524075056434696
+    second: TAP_TEXT_2
+  - first:
+      213: -5537314252804178841
+    second: TAP_TEXT_3
+  - first:
+      213: 1066698013168512978
+    second: TAP_TEXT_4
+  - first:
+      213: -1821844567549204781
+    second: TAP_TEXT_5
+  - first:
+      213: -5938903235769536103
+    second: TAP_TEXT_6
+  - first:
+      213: 7670148837743620455
+    second: TAP_TEXT_7
+  - first:
+      213: -7100041108129534797
+    second: TAP_TEXT_8
+  - first:
+      213: -6805403317982430336
+    second: TAP_TEXT_9
+  - first:
+      213: -445479044817473759
+    second: TAP_TEXT_10
+  - first:
+      213: -5637062943145493729
+    second: TAP_TEXT_11
+  - first:
+      213: 8780624807472064998
+    second: TAP_TEXT_12
+  - first:
+      213: -3844063914512584131
+    second: TAP_TEXT_13
+  - first:
+      213: -4685949354493572018
+    second: TAP_TEXT_14
+  - first:
+      213: 7140046071843173957
+    second: TAP_TEXT_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TAP_TEXT_0
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 509
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee39e221bc195220800000000000000
+      internalID: 2475041017337298667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 509
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29cdd921e43555f50800000000000000
+      internalID: 6869488401408449682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 489
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f172bc01a415ff80800000000000000
+      internalID: -8073524075056434696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 509
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c36e766028723b0800000000000000
+      internalID: -5537314252804178841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_4
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 509
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df268df03cadce00800000000000000
+      internalID: 1066698013168512978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_5
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 509
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d62143b40287b6e0800000000000000
+      internalID: -1821844567549204781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_6
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 509
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991f98409f6c49da0800000000000000
+      internalID: -5938903235769536103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_7
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 509
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7617510dab7d17a60800000000000000
+      internalID: 7670148837743620455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_8
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 509
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bca443da36977d90800000000000000
+      internalID: -7100041108129534797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_9
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 509
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b74662db95e81a0800000000000000
+      internalID: -6805403317982430336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_10
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 509
+        width: 12
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f26c24b2751d9f0800000000000000
+      internalID: -445479044817473759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_11
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 509
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b7b41ae1125c1b0800000000000000
+      internalID: -5637062943145493729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_12
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 529
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e9ea5b9dbb0bd970800000000000000
+      internalID: 8780624807472064998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_13
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 509
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3274998c3427aac0800000000000000
+      internalID: -3844063914512584131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_14
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 289
+        width: 202
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c80f9a3e928feb0800000000000000
+      internalID: -4685949354493572018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAP_TEXT_15
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 219
+        width: 162
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546b220a21a861360800000000000000
+      internalID: 7140046071843173957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TAP_TEXT_0: 2475041017337298667
+      TAP_TEXT_1: 6869488401408449682
+      TAP_TEXT_10: -445479044817473759
+      TAP_TEXT_11: -5637062943145493729
+      TAP_TEXT_12: 8780624807472064998
+      TAP_TEXT_13: -3844063914512584131
+      TAP_TEXT_14: -4685949354493572018
+      TAP_TEXT_15: 7140046071843173957
+      TAP_TEXT_2: -8073524075056434696
+      TAP_TEXT_3: -5537314252804178841
+      TAP_TEXT_4: 1066698013168512978
+      TAP_TEXT_5: -1821844567549204781
+      TAP_TEXT_6: -5938903235769536103
+      TAP_TEXT_7: 7670148837743620455
+      TAP_TEXT_8: -7100041108129534797
+      TAP_TEXT_9: -6805403317982430336
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
