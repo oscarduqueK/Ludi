@@ -162,6 +162,7 @@ public class Aquarium : MonoBehaviour
             case 0: return new FishSample1();
             case 1: return new FishSample2();
             case 2: return new FishSample3();
+            case 3: return new FishSample4();
             default: return null;
         }
     }

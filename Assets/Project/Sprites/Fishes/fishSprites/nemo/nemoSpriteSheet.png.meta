@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: d4157723babfdea479981c8c8a36773e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7134778242493340713
+    second: nemoSpriteSheet_0
+  - first:
+      213: 1913681444131286486
+    second: nemoSpriteSheet_1
+  - first:
+      213: 2725431324304876155
+    second: nemoSpriteSheet_2
+  - first:
+      213: 5378580710571488125
+    second: nemoSpriteSheet_3
+  - first:
+      213: -8641185083238187386
+    second: nemoSpriteSheet_4
+  - first:
+      213: 8500186782304235707
+    second: nemoSpriteSheet_5
+  - first:
+      213: -8017350706919364205
+    second: nemoSpriteSheet_6
+  - first:
+      213: -242764643477423719
+    second: nemoSpriteSheet_7
+  - first:
+      213: 6754286017410606234
+    second: nemoSpriteSheet_8
+  - first:
+      213: 5748696887574869080
+    second: nemoSpriteSheet_9
+  - first:
+      213: -5308638590007721943
+    second: nemoSpriteSheet_10
+  - first:
+      213: -4143106111851795707
+    second: nemoSpriteSheet_11
+  - first:
+      213: 9175352629177902651
+    second: nemoSpriteSheet_12
+  - first:
+      213: -4606279857902817943
+    second: nemoSpriteSheet_13
+  - first:
+      213: -1832550795127534342
+    second: nemoSpriteSheet_14
+  - first:
+      213: 4768150726161418731
+    second: nemoSpriteSheet_15
+  - first:
+      213: -4552356274695351649
+    second: nemoSpriteSheet_16
+  - first:
+      213: 5910630810637005161
+    second: nemoSpriteSheet_17
+  - first:
+      213: -1620536480841129906
+    second: nemoSpriteSheet_18
+  - first:
+      213: 3623120048321783528
+    second: nemoSpriteSheet_19
+  - first:
+      213: 829253885493756411
+    second: nemoSpriteSheet_20
+  - first:
+      213: 4860340217447107047
+    second: nemoSpriteSheet_21
+  - first:
+      213: 2641799796250583437
+    second: nemoSpriteSheet_22
+  - first:
+      213: 5210734486286535448
+    second: nemoSpriteSheet_23
+  - first:
+      213: -9074796127260545513
+    second: nemoSpriteSheet_24
+  - first:
+      213: -2542180489025455502
+    second: nemoSpriteSheet_25
+  - first:
+      213: 2079814934859648732
+    second: nemoSpriteSheet_26
+  - first:
+      213: -7062952609726389486
+    second: nemoSpriteSheet_27
+  - first:
+      213: 9165591273199439122
+    second: nemoSpriteSheet_28
+  - first:
+      213: 1431249933253643710
+    second: nemoSpriteSheet_29
+  - first:
+      213: -5003364904235676478
+    second: nemoSpriteSheet_30
+  - first:
+      213: 6918132219487569451
+    second: nemoSpriteSheet_31
+  - first:
+      213: 6708688901707939215
+    second: nemoSpriteSheet_32
+  - first:
+      213: -3639174075196122672
+    second: nemoSpriteSheet_33
+  - first:
+      213: 6625682654458147304
+    second: nemoSpriteSheet_34
+  - first:
+      213: -1694245499392988733
+    second: nemoSpriteSheet_35
+  - first:
+      213: -1836659977900792380
+    second: nemoSpriteSheet_36
+  - first:
+      213: 5973569701514164403
+    second: nemoSpriteSheet_37
+  - first:
+      213: -8920981389549278153
+    second: nemoSpriteSheet_38
+  - first:
+      213: -3119377999909531776
+    second: nemoSpriteSheet_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nemoSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d3aff87dfc2cfc90800000000000000
+      internalID: -7134778242493340713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dda3b26223ce8a10800000000000000
+      internalID: 1913681444131286486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b722ae8795da2d520800000000000000
+      internalID: 2725431324304876155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73b169c8ae84aa40800000000000000
+      internalID: 5378580710571488125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68efe2323f7541880800000000000000
+      internalID: -8641185083238187386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0f6b3b7dab6f570800000000000000
+      internalID: 8500186782304235707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 1745
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39928528206acb090800000000000000
+      internalID: -8017350706919364205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 999f08dc7d681acf0800000000000000
+      internalID: -242764643477423719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94a52bd85b0cbd50800000000000000
+      internalID: 6754286017410606234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8543b418c5977cf40800000000000000
+      internalID: 5748696887574869080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920c8a9245de356b0800000000000000
+      internalID: -5308638590007721943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50be25041fab086c0800000000000000
+      internalID: -4143106111851795707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3668176a96655f70800000000000000
+      internalID: 9175352629177902651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 1396
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d6aa5dfd43310c0800000000000000
+      internalID: -4606279857902817943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc4097d2c87196e0800000000000000
+      internalID: -1832550795127534342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be94f5c92dfdb2240800000000000000
+      internalID: 4768150726161418731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9253cb6618c2d0c0800000000000000
+      internalID: -4552356274695351649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9617f7a0867c60250800000000000000
+      internalID: 5910630810637005161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4027e918a2b289e0800000000000000
+      internalID: -1620536480841129906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6e0d2ec78e74230800000000000000
+      internalID: 3623120048321783528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 1047
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1c779e30a128b00800000000000000
+      internalID: 829253885493756411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9ca743da5637340800000000000000
+      internalID: 4860340217447107047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d812737faee89a420800000000000000
+      internalID: 2641799796250583437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b8cf9586f305840800000000000000
+      internalID: 5210734486286535448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e6b89a009df0280800000000000000
+      internalID: -9074796127260545513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a75b4705c58bcd0800000000000000
+      internalID: -2542180489025455502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde8cd6f9acfcdc10800000000000000
+      internalID: 2079814934859648732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 698
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21327d7c50a5bfd90800000000000000
+      internalID: -7062952609726389486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d097b93b8b23f70800000000000000
+      internalID: 9165591273199439122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd82603b32dcd310800000000000000
+      internalID: 1431249933253643710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc4069e02a709ab0800000000000000
+      internalID: -5003364904235676478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26cdbb8994220060800000000000000
+      internalID: 6918132219487569451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d38ee030d0a1d50800000000000000
+      internalID: 6708688901707939215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9df14b57e0f7dc0800000000000000
+      internalID: -3639174075196122672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 349
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1f175154723fb50800000000000000
+      internalID: 6625682654458147304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9606ed1b4dc78e0800000000000000
+      internalID: -1694245499392988733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5eb0c2b7fd286e0800000000000000
+      internalID: -1836659977900792380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8b9c38ef166e250800000000000000
+      internalID: 5973569701514164403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c6b0c01be423480800000000000000
+      internalID: -8920981389549278153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nemoSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 704
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f493b7c3eb5b4d0800000000000000
+      internalID: -3119377999909531776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 02a80907637436448bd03f5e5e4f12e5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      nemoSpriteSheet_0: -7134778242493340713
+      nemoSpriteSheet_1: 1913681444131286486
+      nemoSpriteSheet_10: -5308638590007721943
+      nemoSpriteSheet_11: -4143106111851795707
+      nemoSpriteSheet_12: 9175352629177902651
+      nemoSpriteSheet_13: -4606279857902817943
+      nemoSpriteSheet_14: -1832550795127534342
+      nemoSpriteSheet_15: 4768150726161418731
+      nemoSpriteSheet_16: -4552356274695351649
+      nemoSpriteSheet_17: 5910630810637005161
+      nemoSpriteSheet_18: -1620536480841129906
+      nemoSpriteSheet_19: 3623120048321783528
+      nemoSpriteSheet_2: 2725431324304876155
+      nemoSpriteSheet_20: 829253885493756411
+      nemoSpriteSheet_21: 4860340217447107047
+      nemoSpriteSheet_22: 2641799796250583437
+      nemoSpriteSheet_23: 5210734486286535448
+      nemoSpriteSheet_24: -9074796127260545513
+      nemoSpriteSheet_25: -2542180489025455502
+      nemoSpriteSheet_26: 2079814934859648732
+      nemoSpriteSheet_27: -7062952609726389486
+      nemoSpriteSheet_28: 9165591273199439122
+      nemoSpriteSheet_29: 1431249933253643710
+      nemoSpriteSheet_3: 5378580710571488125
+      nemoSpriteSheet_30: -5003364904235676478
+      nemoSpriteSheet_31: 6918132219487569451
+      nemoSpriteSheet_32: 6708688901707939215
+      nemoSpriteSheet_33: -3639174075196122672
+      nemoSpriteSheet_34: 6625682654458147304
+      nemoSpriteSheet_35: -1694245499392988733
+      nemoSpriteSheet_36: -1836659977900792380
+      nemoSpriteSheet_37: 5973569701514164403
+      nemoSpriteSheet_38: -8920981389549278153
+      nemoSpriteSheet_39: -3119377999909531776
+      nemoSpriteSheet_4: -8641185083238187386
+      nemoSpriteSheet_5: 8500186782304235707
+      nemoSpriteSheet_6: -8017350706919364205
+      nemoSpriteSheet_7: -242764643477423719
+      nemoSpriteSheet_8: 6754286017410606234
+      nemoSpriteSheet_9: 5748696887574869080
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
