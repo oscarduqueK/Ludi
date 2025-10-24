@@ -2453,6 +2453,7 @@ MonoBehaviour:
   - {fileID: 873167025881649874, guid: 4f5d7fa9be52fbc4d84873516e07da71, type: 3}
   - {fileID: 873167025881649874, guid: 53aa76c802154294090b482b4bc41fa9, type: 3}
   - {fileID: 873167025881649874, guid: 6664a9331a36f344a8e54f8eb81367c6, type: 3}
+  - {fileID: 1671291206737575262, guid: 86d9ed281c3083a46a0a3a453df8a34e, type: 3}
   aquariumContainer: {fileID: 1516638790}
   noFishMessage: {fileID: 1664755710}
   infoText: {fileID: 1799553397}

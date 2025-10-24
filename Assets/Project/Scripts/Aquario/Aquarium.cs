@@ -16,7 +16,6 @@ public class Aquarium : MonoBehaviour
 
     void Start()
     {
-        // Asegúrate de que el texto está oculto al inicio
         if (infoText != null)
             infoText.gameObject.SetActive(false);
 
@@ -31,6 +30,7 @@ public class Aquarium : MonoBehaviour
         if (!fishes.Contains(fishPrefab))
         {
             fishes.Add(fishPrefab);
+            currentFishLogic.isFishUnlocked = true;
             Debug.Log($"Se ha desbloqueado el pez {fishPrefab.name}");
         }
 
@@ -40,13 +40,11 @@ public class Aquarium : MonoBehaviour
     public void NextFish()
     {
         if (fishes.Count == 0) return;
-
         currentIndex = (currentIndex + 1) % fishes.Count;
-        // Si estás viendo info, actualiza la lógica del pez (para que ShowFishInfo use la clase correcta)
+       
         if (isShowingInfo)
         {
             currentFishLogic = AssociateFish(currentIndex);
-            // actualizar el texto si quieres que cambie automáticamente mientras estás en modo info:
             if (currentFishLogic != null && infoText != null)
             {
                 infoText.text = "";
@@ -81,7 +79,6 @@ public class Aquarium : MonoBehaviour
 
     private void UpdateAquariumView()
     {
-        // Modo "mostrar pez": destruir cualquier texto y crear la instancia del pez
         DestroyCurrentFish();
 
         if (fishes.Count == 0)
@@ -95,13 +92,11 @@ public class Aquarium : MonoBehaviour
         if (infoText != null)
             infoText.gameObject.SetActive(false);
 
-        // Instancia el pez actual
         currentFishInstance = Instantiate(fishes[currentIndex], aquariumContainer);
         currentFishLogic = AssociateFish(currentIndex);
         isShowingInfo = false;
     }
 
-    // Función para destruir el pez
     public void DestroyCurrentFish()
     {
         if (currentFishInstance != null)
@@ -111,10 +106,8 @@ public class Aquarium : MonoBehaviour
         }
     }
 
-    // Función para mostrar información del pez (texto)
     public void ShowFishInfo()
     {
-        // Destruye el pez 3D y muestra el texto
         DestroyCurrentFish();
 
         if (infoText == null)
@@ -124,7 +117,7 @@ public class Aquarium : MonoBehaviour
         }
 
         infoText.gameObject.SetActive(true);
-        infoText.text = ""; // limpiar antes de usar
+        infoText.text = ""; 
 
         currentFishLogic = AssociateFish(currentIndex);
 
@@ -134,10 +127,8 @@ public class Aquarium : MonoBehaviour
         isShowingInfo = true;
     }
 
-    // Función para volver a mostrar el pez (reinstanciar)
     public void ShowFish()
     {
-        // Si ya hay una instancia no hacemos nada (opcional)
         if (currentFishInstance != null) return;
 
         if (fishes.Count == 0)
@@ -156,7 +147,6 @@ public class Aquarium : MonoBehaviour
         isShowingInfo = false;
     }
 
-    // Alternar vista info / pez (útil para un solo botón)
     public void ToggleFishView()
     {
         if (isShowingInfo)
@@ -165,7 +155,6 @@ public class Aquarium : MonoBehaviour
             ShowFishInfo();
     }
 
-    // Aquí asocias cada pez con su clase hija
     private Fish AssociateFish(int index)
     {
         switch (index)
@@ -173,7 +162,7 @@ public class Aquarium : MonoBehaviour
             case 0: return new FishSample1();
             case 1: return new FishSample2();
             case 2: return new FishSample3();
-            // añade más cases según necesites
+            case 3: return new FishSample4();
             default: return null;
         }
     }
