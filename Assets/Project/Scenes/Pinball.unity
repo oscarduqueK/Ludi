@@ -441,7 +441,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 546650057b752224d9cf80714b370dc4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2448,7 +2448,6 @@ MonoBehaviour:
   - {fileID: 1502714258}
   - {fileID: 78554017}
   - {fileID: 1454633710}
-  LevelIndexInspector: 3
   spawnPointIndex: 0
 --- !u!4 &1651916390
 Transform:
