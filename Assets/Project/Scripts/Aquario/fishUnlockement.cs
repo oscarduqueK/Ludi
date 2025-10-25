@@ -3,30 +3,22 @@ using UnityEngine;
 
 public class fishUnlockement : MonoBehaviour
 {
-    private Fish currentFishLogic;
-    private Aquarium aquarium;
-
-    private Event PopBubble;
-    private Event LoUnlockFish;
-
-    public Fish GetFish(int fishId)
-    {
-        return aquarium.AssociateFish(fishId);
-    }
-
     public bool UnlockSequence(int fishId)
     {
-        Fish currentFish = aquarium.AssociateFish(fishId);
-
-        if (currentFish != null && !currentFish.isFishUnlocked)
+        if (Aquarium.Instance == null)
         {
-            currentFish.isFishUnlocked = true;
-            Debug.Log("Change to unlockement secuence");
-
-            //Pendiente por poner cosas de la animacion etc...
-            return true;
+            // Se asegura de que Aquarium esté instanciado automáticamente
+            new GameObject("Aquarium").AddComponent<Aquarium>();
         }
 
-        return false;
+        if (Aquarium.Instance.IsUnlocked(fishId))
+        {
+            Debug.Log($"fishUnlockement: Pez {fishId} ya estaba desbloqueado.");
+            return false;
+        }
+
+        bool unlockedNow = Aquarium.Instance.SetUnlocked(fishId);
+        Debug.Log($"fishUnlockement: Pez {fishId} desbloqueado ahora = {unlockedNow}");
+        return unlockedNow;
     }
 }

@@ -2,9 +2,22 @@
 using UnityEngine;
 using TMPro;
 
+public class FishData
+{
+    public int id;
+    public string fishName;
+    public GameObject prefab;
+    [HideInInspector]
+    public bool unlocked = false;
+}
+
 public class Aquarium : MonoBehaviour
 {
+    public static Aquarium Instance;
+    public List<FishData> allFishDatabase = new List<FishData>();
+
     public List<GameObject> fishes = new List<GameObject>();
+
     public Transform aquariumContainer;
     public GameObject noFishMessage;
     public TextMeshProUGUI infoText;
@@ -14,16 +27,72 @@ public class Aquarium : MonoBehaviour
     private Fish currentFishLogic;
     private bool isShowingInfo = false;
 
+    private HashSet<int> unlockedFishIds = new HashSet<int>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // Crear contenedor e infoText por código si no existen
+        if (aquariumContainer == null)
+        {
+            GameObject containerGO = new GameObject("AquariumContainer");
+            containerGO.transform.SetParent(transform);
+            aquariumContainer = containerGO.transform;
+        }
+
+        if (infoText == null)
+        {
+            GameObject infoGO = new GameObject("InfoText");
+            infoGO.transform.SetParent(transform);
+            infoText = infoGO.AddComponent<TextMeshProUGUI>();
+            infoText.gameObject.SetActive(false);
+        }
+
+        if (noFishMessage == null)
+        {
+            noFishMessage = new GameObject("NoFishMessage");
+            noFishMessage.transform.SetParent(transform);
+            noFishMessage.SetActive(false);
+        }
+    }
+
     void Start()
     {
-        if (infoText != null)
-            infoText.gameObject.SetActive(false);
-
-        if (fishes.Count > 0)
-            UpdateAquariumView();
-        else
-            noFishMessage.SetActive(true);
+        RefreshFishesFromDatabase();
+        if (fishes.Count > 0) UpdateAquariumView();
+        else noFishMessage.SetActive(true);
     }
+
+    public bool IsUnlocked(int fishId) => unlockedFishIds.Contains(fishId);
+
+    public bool SetUnlocked(int fishId)
+    {
+        if (IsUnlocked(fishId)) return false;
+        unlockedFishIds.Add(fishId);
+        return true;
+    }
+
+    private FishData GetFishData(int id) => allFishDatabase.Find(x => x.id == id);
+
+    private void RefreshFishesFromDatabase()
+    {
+        fishes.Clear();
+        foreach (var fd in allFishDatabase)
+        {
+            if (fd.unlocked && fd.prefab != null) fishes.Add(fd.prefab);
+        }
+    }
+
 
     public void UnlockFish(GameObject fishPrefab)
     {
