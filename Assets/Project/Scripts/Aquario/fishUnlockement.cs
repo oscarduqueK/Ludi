@@ -3,30 +3,21 @@ using UnityEngine;
 
 public class fishUnlockement : MonoBehaviour
 {
-    private Fish currentFishLogic;
-    private Aquarium aquarium;
-
-    private Event PopBubble;
-    private Event LoUnlockFish;
-
-    public Fish GetFish(int fishId)
-    {
-        return aquarium.AssociateFish(fishId);
-    }
+    public Aquarium aquarium;
 
     public bool UnlockSequence(int fishId)
     {
-        Fish currentFish = aquarium.AssociateFish(fishId);
-
-        if (currentFish != null && !currentFish.isFishUnlocked)
+        if (aquarium == null)
         {
-            currentFish.isFishUnlocked = true;
-            Debug.Log("Change to unlockement secuence");
-
-            //Pendiente por poner cosas de la animacion etc...
-            return true;
+            return false;
         }
 
-        return false;
+        if (aquarium.IsUnlocked(fishId))
+        {
+            return false;
+        }
+
+        bool unlockedNow = aquarium.SetUnlocked(fishId);
+        return unlockedNow;
     }
 }

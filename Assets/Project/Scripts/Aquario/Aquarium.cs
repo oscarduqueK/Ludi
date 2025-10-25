@@ -2,9 +2,22 @@
 using UnityEngine;
 using TMPro;
 
+public class FishData
+{
+    public int id;
+    public string fishName;
+    public GameObject prefab;
+    [HideInInspector]
+    public bool unlocked = false;
+}
+
 public class Aquarium : MonoBehaviour
 {
+    public static Aquarium Instance;
+    public List<FishData> allFishDatabase = new List<FishData>();
+
     public List<GameObject> fishes = new List<GameObject>();
+
     public Transform aquariumContainer;
     public GameObject noFishMessage;
     public TextMeshProUGUI infoText;
@@ -19,10 +32,74 @@ public class Aquarium : MonoBehaviour
         if (infoText != null)
             infoText.gameObject.SetActive(false);
 
+        RefreshFishesFromDatabase();
+
         if (fishes.Count > 0)
             UpdateAquariumView();
         else
             noFishMessage.SetActive(true);
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public bool IsUnlocked(int id)
+    {
+        FishData fd = GetFishData(id);
+        return fd != null && fd.unlocked;
+    }
+
+    // Devuelve true si se acaba de desbloquear (primer vez)
+    public bool SetUnlocked(int id)
+    {
+        FishData fd = GetFishData(id);
+        if (fd == null) return false;
+        if (fd.unlocked) return false;
+
+        fd.unlocked = true;
+
+        // Añadir a la lista visual si no está ya
+        if (fd.prefab != null && !fishes.Contains(fd.prefab))
+        {
+            fishes.Add(fd.prefab);
+        }
+
+        // Actualizar vista si quieres mostrar inmediatamente
+        UpdateAquariumView();
+
+        Debug.Log($"Aquarium: fish id {id} marcado como UNLOCKED.");
+        return true;
+    }
+
+    public GameObject GetPrefab(int id)
+    {
+        FishData fd = GetFishData(id);
+        return fd != null ? fd.prefab : null;
+    }
+
+    private FishData GetFishData(int id)
+    {
+        return allFishDatabase.Find(x => x.id == id);
+    }
+
+    // Rellena fishes con los prefabs de los unlocked al iniciar (si quieres)
+    private void RefreshFishesFromDatabase()
+    {
+        fishes.Clear();
+        foreach (var fd in allFishDatabase)
+        {
+            if (fd.unlocked && fd.prefab != null)
+                fishes.Add(fd.prefab);
+        }
     }
 
     public void UnlockFish(GameObject fishPrefab)

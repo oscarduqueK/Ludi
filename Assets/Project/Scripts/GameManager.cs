@@ -63,18 +63,33 @@ public class GameManager : MonoBehaviour
 
         if (won)
         {
-            int fishId = tm.currentLevel.GetFishId();
-
-            bool unlockedNow = false;
-            if (fu != null && fishId >= 0)
+            if (tm == null || tm.currentLevel == null)
             {
-                unlockedNow = fu.UnlockSequence(fishId);
+                SceneManager.LoadScene("Win4secondTime");
             }
-
-            if (unlockedNow)
-                SceneManager.LoadScene("Win", LoadSceneMode.Additive);
             else
-                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive);
+            {
+                int fishId = tm.currentLevel.GetFishId();
+
+                bool unlockedNow = false;
+                if (fu != null && fishId >= 0)
+                {
+                    unlockedNow = fu.UnlockSequence(fishId);
+                }
+                else
+                {
+                    Debug.LogWarning("GameOver: fu null o fishId inválido");
+                }
+
+                if (unlockedNow)
+                {
+                    SceneManager.LoadScene("Win");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Win4secondTime");
+                }
+            }
         }
         else
         {
@@ -86,15 +101,27 @@ public class GameManager : MonoBehaviour
 
     private void TryToUnlockFish()
     {
-        if (tm.currentLevel == null) return;
+        if (tm == null || tm.currentLevel == null)
+        {
+            Debug.LogWarning("TryToUnlockFish: tm o currentLevel null");
+            return;
+        }
 
         int fishId = tm.currentLevel.GetFishId();
 
-
         if (fu != null && fishId >= 0)
         {
-            currentFish = fu.GetFish(fishId);
-            fu.UnlockSequence(fishId);
+            bool unlockedNow = fu.UnlockSequence(fishId);
+
+            // guarda o usa unlockedNow en GameOver o aquí mismo
+            if (unlockedNow)
+                Debug.Log($"GameManager: fish {fishId} desbloqueado ahora.");
+            else
+                Debug.Log($"GameManager: fish {fishId} ya estaba desbloqueado.");
+        }
+        else
+        {
+            Debug.LogWarning("TryToUnlockFish: fu null o fishId invalido");
         }
     }
 
