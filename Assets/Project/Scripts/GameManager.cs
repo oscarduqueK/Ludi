@@ -28,6 +28,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Instancia fishUnlockement si no existe
+        if (fu == null)
+        {
+            GameObject fuGO = new GameObject("fishUnlockement");
+            fu = fuGO.AddComponent<fishUnlockement>();
+        }
     }
 
     public void AddTrash(int amount = 1)
@@ -65,31 +72,28 @@ public class GameManager : MonoBehaviour
         {
             if (tm == null || tm.currentLevel == null)
             {
+                Debug.LogWarning("GameOver: tm o currentLevel null");
                 SceneManager.LoadScene("Win4secondTime");
+                Time.timeScale = 0f;
+                return;
+            }
+
+            int fishId = tm.currentLevel.GetFishId();
+            bool unlockedNow = false;
+
+            if (fu != null && fishId >= 0)
+            {
+                unlockedNow = fu.UnlockSequence(fishId);
             }
             else
             {
-                int fishId = tm.currentLevel.GetFishId();
-
-                bool unlockedNow = false;
-                if (fu != null && fishId >= 0)
-                {
-                    unlockedNow = fu.UnlockSequence(fishId);
-                }
-                else
-                {
-                    Debug.LogWarning("GameOver: fu null o fishId inválido");
-                }
-
-                if (unlockedNow)
-                {
-                    SceneManager.LoadScene("Win");
-                }
-                else
-                {
-                    SceneManager.LoadScene("Win4secondTime");
-                }
+                Debug.LogWarning("GameOver: fu null o fishId inválido");
             }
+
+            if (unlockedNow)
+                SceneManager.LoadScene("Win", LoadSceneMode.Additive);
+            else
+                SceneManager.LoadScene("Win4secondTime");
         }
         else
         {

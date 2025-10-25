@@ -3,21 +3,22 @@ using UnityEngine;
 
 public class fishUnlockement : MonoBehaviour
 {
-    public Aquarium aquarium;
-
     public bool UnlockSequence(int fishId)
     {
-        if (aquarium == null)
+        if (Aquarium.Instance == null)
         {
+            // Se asegura de que Aquarium esté instanciado automáticamente
+            new GameObject("Aquarium").AddComponent<Aquarium>();
+        }
+
+        if (Aquarium.Instance.IsUnlocked(fishId))
+        {
+            Debug.Log($"fishUnlockement: Pez {fishId} ya estaba desbloqueado.");
             return false;
         }
 
-        if (aquarium.IsUnlocked(fishId))
-        {
-            return false;
-        }
-
-        bool unlockedNow = aquarium.SetUnlocked(fishId);
+        bool unlockedNow = Aquarium.Instance.SetUnlocked(fishId);
+        Debug.Log($"fishUnlockement: Pez {fishId} desbloqueado ahora = {unlockedNow}");
         return unlockedNow;
     }
 }
