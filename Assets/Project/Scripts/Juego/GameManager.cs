@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int requiredTrashToWin;
 
     private int trashCollected = 0;
-    public int vidas = 3;
+    public int vidas;
 
     private bool gameEnded = false;
 
@@ -50,10 +51,18 @@ public class GameManager : MonoBehaviour
         vidas--;
         Debug.Log("Vida perdida. Vidas restantes: " + vidas);
 
+        FindObjectOfType<Vidas>()?.ActualizarVidas();
+
         if (vidas <= 0)
         {
-            GameOver(false);
+            StartCoroutine(GameOverConRetraso());
         }
+    }
+
+    private IEnumerator GameOverConRetraso()
+    {
+        yield return new WaitForSeconds(1f);
+        GameOver(false);
     }
 
     public void GameOver(bool won)
@@ -89,7 +98,6 @@ public class GameManager : MonoBehaviour
         if (tm.currentLevel == null) return;
 
         int fishId = tm.currentLevel.GetFishId();
-
 
         if (fu != null && fishId >= 0)
         {
