@@ -7,8 +7,9 @@ public class fishUnlockement : MonoBehaviour
     {
         if (Aquarium.Instance == null)
         {
-            // Se asegura de que Aquarium esté instanciado automáticamente
-            new GameObject("Aquarium").AddComponent<Aquarium>();
+            var existing = GameObject.FindAnyObjectByType<Aquarium>();
+            if (existing == null)
+                new GameObject("Aquarium").AddComponent<Aquarium>();
         }
 
         if (Aquarium.Instance.IsUnlocked(fishId))
@@ -19,6 +20,13 @@ public class fishUnlockement : MonoBehaviour
 
         bool unlockedNow = Aquarium.Instance.SetUnlocked(fishId);
         Debug.Log($"fishUnlockement: Pez {fishId} desbloqueado ahora = {unlockedNow}");
+
+        if (unlockedNow)
+        {
+            // sincroniza inmediatamente la vista / base de datos
+            Aquarium.Instance.ForceRefresh();
+        }
+
         return unlockedNow;
     }
 }
