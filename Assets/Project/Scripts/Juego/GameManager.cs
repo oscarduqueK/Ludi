@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         vidas--;
         Debug.Log("Vida perdida. Vidas restantes: " + vidas);
 
-        FindObjectOfType<Vidas>()?.ActualizarVidas();
+        FindAnyObjectByType<Vidas>()?.ActualizarVidas();
 
         if (vidas <= 0)
         {
