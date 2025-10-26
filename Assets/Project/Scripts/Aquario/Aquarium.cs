@@ -35,9 +35,11 @@ public class Aquarium : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("[Aquarium] Instancia creada y marcada como persistente.");
         }
         else if (Instance != this)
         {
+            Debug.LogWarning("[Aquarium] Se intentó crear una segunda instancia, destruida.");
             Destroy(gameObject);
             return;
         }
@@ -69,6 +71,8 @@ public class Aquarium : MonoBehaviour
     void Start()
     {
         RefreshFishesFromDatabase();
+
+        Debug.Log($"[Aquarium] Start ejecutado. Pez desbloqueados: {fishes.Count}");
         if (fishes.Count > 0) UpdateAquariumView();
         else noFishMessage.SetActive(true);
     }
@@ -78,21 +82,66 @@ public class Aquarium : MonoBehaviour
     public bool SetUnlocked(int fishId)
     {
         if (IsUnlocked(fishId)) return false;
+
+        // añade al set lógico
         unlockedFishIds.Add(fishId);
+
+        // sincroniza el FishData si existe
+        FishData fd = GetFishData(fishId);
+        if (fd != null)
+        {
+            fd.unlocked = true;
+            if (fd.prefab != null && !fishes.Contains(fd.prefab))
+            {
+                fishes.Add(fd.prefab);
+            }
+        }
+
+        Debug.Log($"[Aquarium] SetUnlocked: id={fishId}. total unlocked={unlockedFishIds.Count}. fishes list={fishes.Count}");
         return true;
     }
 
     private FishData GetFishData(int id) => allFishDatabase.Find(x => x.id == id);
 
-    private void RefreshFishesFromDatabase()
+    public void RefreshFishesFromDatabase()
     {
+        // NO borramos el HashSet: es la fuente de la verdad
         fishes.Clear();
+
         foreach (var fd in allFishDatabase)
         {
-            if (fd.unlocked && fd.prefab != null) fishes.Add(fd.prefab);
+            if (fd == null) continue;
+            if (unlockedFishIds.Contains(fd.id) && fd.prefab != null)
+            {
+                fd.unlocked = true;
+                if (!fishes.Contains(fd.prefab))
+                    fishes.Add(fd.prefab);
+            }
+            else
+            {
+                // mantener fd.unlocked coherente
+                fd.unlocked = fd.unlocked && unlockedFishIds.Contains(fd.id);
+            }
         }
+
+        Debug.Log($"[Aquarium] Refrescado. fishes.Count = {fishes.Count}");
     }
 
+    public void ForceRefresh()
+    {
+        RefreshFishesFromDatabase();
+        // Si ya estás en la escena del acuario y quieres que se muestre inmediatamente:
+        if (fishes.Count > 0)
+            UpdateAquariumView();
+        else
+            noFishMessage?.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        // Cuando el objeto se activa en la escena (o volvemos a ella), sincroniza visualmente
+        RefreshFishesFromDatabase();
+    }
 
     public void UnlockFish(GameObject fishPrefab)
     {
