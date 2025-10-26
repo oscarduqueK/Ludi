@@ -56,6 +56,10 @@ public class MenuPausaUI : MonoBehaviour
         SceneManager.LoadScene("Aquario");
     }
 
+    public void GoToSaveFish()
+    {
+        SceneManager.LoadScene("SaveFish");
+    }
     public void ExitFromTheGame()
     {
         Application.Quit();
