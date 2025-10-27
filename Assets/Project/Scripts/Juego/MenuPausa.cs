@@ -25,7 +25,6 @@ public class MenuPausaUI : MonoBehaviour
             SceneManager.LoadScene("MenuOptions", LoadSceneMode.Additive);
         }
     }
-    [System.Obsolete]
     public void GoBackFromOptions()
     {
         if (previousScene == "Pinball")
