@@ -30,7 +30,7 @@ public class GameInitializer : MonoBehaviour
     IEnumerator Start()
     {
         // Pequeña espera para simular carga
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         // Cargar la siguiente escena
         SceneManager.LoadScene("Menu");

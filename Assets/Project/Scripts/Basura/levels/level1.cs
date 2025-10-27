@@ -6,6 +6,12 @@ public class level1 : levelConfig
     {
         Debug.Log("Nivel 1 configurado");
     }
+
+    public override int GetFishId()
+    {
+        Debug.Log("Niga");
+        return 0;
+    }
     public override void SpawnTrash(trashmanagement generator)
     {
         //Basura necesaria para ganar

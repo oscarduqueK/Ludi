@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1531404530823805378}
   - component: {fileID: 32808048166042275}
   - component: {fileID: 7550094762088760540}
+  - component: {fileID: 5620045034008095257}
   m_Layer: 0
   m_Name: Fish_0
   m_TagString: Untagged
@@ -110,3 +111,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5620045034008095257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671291206737575262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d0300ded0ef7d4b9ffa110696f39c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishId: 0
+  fishName: Pexi Pallaso
+  animator: {fileID: 7550094762088760540}
+  nameText: {fileID: 0}
+  isInitialized: 0
+  isFishUnlocked: 0

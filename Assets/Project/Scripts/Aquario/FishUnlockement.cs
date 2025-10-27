@@ -40,38 +40,21 @@ public class fishUnlockement : MonoBehaviour
     /// </summary>
     public bool UnlockSequence(int fishId)
     {
-        if (fishDatabase == null)
-        {
-            Debug.LogWarning("No hay referencia a FishDatabase.");
-            return false;
-        }
+        FishData data = FishDatabase.Instance.GetFishDataById(fishId);
 
-        FishData fish = fishDatabase.GetFishData(fishId);
-
-        if (fish == null)
+        if (data == null)
         {
             Debug.LogWarning($"No se encontró FishData con id {fishId}");
             return false;
         }
 
-        // Si ya estaba desbloqueado, no hacemos nada
-        if (fish.unlocked)
-        {
-            Debug.Log($"El pez {fish.fishName} ya estaba desbloqueado.");
-            return false;
-        }
+        int unlocked = PlayerPrefs.GetInt($"FishUnlocked_{fishId}", 0);
+        if (unlocked == 1) return false;
 
-        // Marcarlo como desbloqueado
-        fish.unlocked = true;
-        PlayerPrefs.SetInt($"Fish_Unlocked_{fish.id}", 1);
+        PlayerPrefs.SetInt($"FishUnlocked_{fishId}", 1);
         PlayerPrefs.Save();
 
-        // Actualizar base de datos (por si la usa otra escena)
-        fishDatabase.SaveFishUnlocked(fishId);
-
-        lastUnlockedId = fishId;
-
-        Debug.Log($"¡Nuevo pez desbloqueado! ID: {fishId} → {fish.fishName}");
+        Debug.Log($"fishUnlockement: Pez {fishId} desbloqueado");
         return true;
     }
 

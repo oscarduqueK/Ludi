@@ -5,8 +5,7 @@ public class FishDatabase : MonoBehaviour
 {
     public static FishDatabase Instance;
 
-    [Header("Lista de todos los peces disponibles")]
-    public List<FishData> fishes = new List<FishData>();
+    public List<FishData> fishes;
 
     void Awake()
     {
@@ -15,13 +14,27 @@ public class FishDatabase : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (Instance != this)
+        else
         {
             Destroy(gameObject);
-            return;
         }
 
-        LoadUnlockedFishes();
+        // Inicializa la lista si está vacía
+        if (fishes == null)
+            fishes = new List<FishData>();
+
+        Debug.Log($"FishDatabase inicializado con {fishes.Count} peces.");
+
+        //Creación de los pescaos de los cojones:
+
+        // Ejemplo: pez del nivel 1
+        fishes.Add(new FishData { id = 0, fishName = "Paco", prefab = fish_0 });
+        // referencia al prefab de Paco
+    }
+
+    public FishData GetFishDataById(int id)
+    {
+        return fishes.Find(f => f.id == id);
     }
     private void LoadUnlockedFishes()
     {

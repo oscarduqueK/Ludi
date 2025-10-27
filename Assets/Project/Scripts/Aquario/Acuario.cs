@@ -19,11 +19,11 @@ public class Aquarium : MonoBehaviour
     {
         allFish = FishDatabase.Instance.fishes;
 
-        if (allFish == null || allFish.Count == 0)
-        {
-            Debug.LogError("Aquarium: No hay peces en FishDatabase.");
-            return;
-        }
+        //if (allFish == null || allFish.Count == 0)
+        //{
+        //    Debug.LogError("Aquarium: No hay peces en FishDatabase.");
+        //    return;
+        //}
 
         ShowFish(currentIndex);
     }

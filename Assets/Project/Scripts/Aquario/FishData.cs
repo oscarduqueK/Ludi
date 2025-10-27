@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
-public class FishData
+public class FishData : MonoBehaviour
 {
     public int id;                   
     public string fishName;          
