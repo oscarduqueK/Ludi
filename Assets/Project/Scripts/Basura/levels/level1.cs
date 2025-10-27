@@ -2,17 +2,10 @@ using UnityEngine;
 
 public class level1 : levelConfig
 {
-    public new int fishToUnlock = 0;
     public override void SetupLevel(trashmanagement generator)
     {
         Debug.Log("Nivel 1 configurado");
     }
-
-    public override int GetFishId()
-    {
-        return 0; // FishSample1
-    }
-
     public override void SpawnTrash(trashmanagement generator)
     {
         //Basura necesaria para ganar

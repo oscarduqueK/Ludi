@@ -1,11 +1,56 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class FishSample1 : Fish
 {
-    public new bool isFishUnlocked = false;
-    public override void ViewInfo(Aquarium aquarium)
+    // Indica si el pez está desbloqueado (controlado por el sistema de desbloqueo)
+    public bool isFishUnlocked = false;
+
+    // Devuelve el texto que se debe mostrar en el UI para este pez.
+    // Si está bloqueado devuelve "???", si no, el nombre.
+    public string GetInfoString()
     {
-        aquarium.infoText.text = "Paco";
+        if (!isFishUnlocked)
+            return "???";
+        return fishName ?? "Unknown Fish";
+    }
+
+    // Método utilitario para que un UI pase su TextMeshProUGUI y se rellene.
+    // Útil si tu Aquarium tiene el text component y quiere pedir directamente
+    public void ViewInfo(TextMeshProUGUI infoText)
+    {
+        if (infoText == null) return;
+        infoText.text = GetInfoString();
+    }
+
+    // Se llama cuando el prefab/instancia aparece en pantalla
+    public override void OnSpawn()
+    {
+        base.OnSpawn();
+
+        if (isFishUnlocked)
+        {
+            Debug.Log($"{fishName} ha aparecido en el acuario (desbloqueado).");
+            if (animator != null)
+                animator.SetTrigger("Idle"); // trigger opcional, pon el que tengas
+        }
+        else
+        {
+            Debug.Log($"{fishName} está bloqueado; se mostrará interrogante en UI.");
+            if (animator != null)
+                animator.SetTrigger("Locked"); // opcional si tienes anim para "locked"
+        }
+    }
+
+    // Se llama cuando el sistema lo desbloquea
+    public override void OnUnlock()
+    {
+        base.OnUnlock();
+
+        isFishUnlocked = true;
+
+        Debug.Log($"{fishName} ha sido desbloqueado.");
+        if (animator != null)
+            animator.SetTrigger("Celebrate"); // animación opcional
     }
 }
