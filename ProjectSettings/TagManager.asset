@@ -50,5 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Hola
+    uniqueID: 1094846795
+    locked: 0
   m_RenderingLayers:
   - Default
+  - hola
