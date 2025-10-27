@@ -1,14 +1,13 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class fishUnlockement : MonoBehaviour
 {
     public bool UnlockSequence(int fishId)
     {
-        // Paso 1: asegurar que el Aquarium existe o crearlo
+        // Asegurar que el Aquarium existe
         if (Aquarium.Instance == null)
         {
-            var existing = FindAnyObjectByType<Aquarium>();
+            Aquarium existing = FindAnyObjectByType<Aquarium>();
             if (existing != null)
             {
                 Aquarium.Instance = existing;
@@ -16,31 +15,36 @@ public class fishUnlockement : MonoBehaviour
             }
             else
             {
-                // Crear uno nuevo desde cero (sin prefab)
                 GameObject aquariumGO = new GameObject("Aquarium");
-                var newAquarium = aquariumGO.AddComponent<Aquarium>();
-                Aquarium.Instance = newAquarium;
+                Aquarium.Instance = aquariumGO.AddComponent<Aquarium>();
                 DontDestroyOnLoad(aquariumGO);
                 Debug.Log("[fishUnlockement] Nuevo Aquarium creado dinámicamente.");
             }
         }
 
-        // Paso 2: asegurarse de que tiene sus componentes configurados
+        // Inicializar UI y contenedor si hace falta
         Aquarium.Instance.InitializeIfNeeded();
 
-        //  Paso 3: desbloquear el pez si no lo estaba ya
-        if (Aquarium.Instance.IsUnlocked(fishId))
+        // Buscar el prefab del pez en la base de datos
+        FishData data = Aquarium.Instance.allFishDatabase.Find(f => f.id == fishId);
+        if (data == null || data.prefab == null)
+        {
+            Debug.LogWarning($"[fishUnlockement] No se encontró prefab para el pez ID={fishId}");
+            return false;
+        }
+
+        // Comprobar si ya estaba desbloqueado
+        if (Aquarium.Instance.unlockedFishPrefabs.Contains(data.prefab))
         {
             Debug.Log($"[fishUnlockement] Pez {fishId} ya estaba desbloqueado.");
             return false;
         }
 
-        bool unlockedNow = Aquarium.Instance.SetUnlocked(fishId);
-        Debug.Log($"[fishUnlockement] Pez {fishId} desbloqueado ahora = {unlockedNow}");
+        // Desbloquear y refrescar acuario
+        Aquarium.Instance.UnlockFish(data.prefab);
+        Aquarium.Instance.RefreshAquarium();
+        Debug.Log($"[fishUnlockement] Pez {fishId} desbloqueado.");
 
-        if (unlockedNow)
-            Aquarium.Instance.ForceRefresh();
-
-        return unlockedNow;
+        return true;
     }
 }

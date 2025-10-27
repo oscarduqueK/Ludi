@@ -7,56 +7,55 @@ public class FishData
     public int id;
     public string fishName;
     public GameObject prefab;
-    [HideInInspector]
-    public bool unlocked = false;
 }
 
 public class Aquarium : MonoBehaviour
 {
     public static Aquarium Instance;
-    public List<FishData> allFishDatabase = new List<FishData>();
 
-    public List<GameObject> fishes = new List<GameObject>();
+    [Header("Base Data")]
+    public List<FishData> allFishDatabase = new List<FishData>(); // Prefabs de todos los peces
 
+    [Header("UI / Container")]
     public Transform aquariumContainer;
     public GameObject noFishMessage;
     public TextMeshProUGUI infoText;
 
+    [HideInInspector]
+    public List<GameObject> unlockedFishPrefabs = new List<GameObject>(); // Solo prefabs desbloqueados
+    
     private int currentIndex = 0;
     private GameObject currentFishInstance;
     private Fish currentFishLogic;
     private bool isShowingInfo = false;
 
-    private HashSet<int> unlockedFishIds = new HashSet<int>();
-
-    private void Awake()
+    public void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log("[Aquarium] Instancia creada y marcada como persistente.");
+            Debug.Log("[Aquarium] Instancia creada y persistente.");
         }
         else if (Instance != this)
         {
-            Debug.LogWarning("[Aquarium] Se intentó crear una segunda instancia, destruida.");
             Destroy(gameObject);
             return;
         }
 
-        // Crear contenedor e infoText por código si no existen
+        // Crear contenedor y UI si no existen
         if (aquariumContainer == null)
         {
-            GameObject containerGO = new GameObject("AquariumContainer");
-            containerGO.transform.SetParent(transform);
-            aquariumContainer = containerGO.transform;
+            GameObject container = new GameObject("AquariumContainer");
+            container.transform.SetParent(transform);
+            aquariumContainer = container.transform;
         }
 
         if (infoText == null)
         {
-            GameObject infoGO = new GameObject("InfoText");
-            infoGO.transform.SetParent(transform);
-            infoText = infoGO.AddComponent<TextMeshProUGUI>();
+            GameObject textGO = new GameObject("InfoText");
+            textGO.transform.SetParent(transform);
+            infoText = textGO.AddComponent<TextMeshProUGUI>();
             infoText.gameObject.SetActive(false);
         }
 
@@ -64,8 +63,27 @@ public class Aquarium : MonoBehaviour
         {
             noFishMessage = new GameObject("NoFishMessage");
             noFishMessage.transform.SetParent(transform);
+            var text = noFishMessage.AddComponent<TextMeshProUGUI>();
+            text.text = "No fish yet!";
             noFishMessage.SetActive(false);
         }
+    }
+
+    public void Start()
+    {
+        RefreshAquarium();
+    }
+
+    #region Unlock / Refresh
+
+    public void UnlockFish(GameObject fishPrefab)
+    {
+        if (!unlockedFishPrefabs.Contains(fishPrefab))
+        {
+            unlockedFishPrefabs.Add(fishPrefab);
+            Debug.Log($"Se ha desbloqueado el pez {fishPrefab.name}");
+        }
+        RefreshAquarium(); // instancia los peces en el contenedor
     }
 
     public void InitializeIfNeeded()
@@ -95,245 +113,95 @@ public class Aquarium : MonoBehaviour
 
         Debug.Log("[Aquarium] InitializeIfNeeded completado.");
     }
-    void Start()
+
+    public void RefreshAquarium()
     {
-        RefreshFishesFromDatabase();
-
-        Debug.Log($"[Aquarium] Start ejecutado. Pez desbloqueados: {fishes.Count}");
-        if (fishes.Count > 0) UpdateAquariumView();
-        else noFishMessage.SetActive(true);
-    }
-
-    public bool IsUnlocked(int fishId) => unlockedFishIds.Contains(fishId);
-
-    private FishData GetFishData(int id) => allFishDatabase.Find(x => x.id == id);
-
-    public bool SetUnlocked(int fishId)
-    {
-        if (!unlockedFishIds.Contains(fishId))
-        {
-            unlockedFishIds.Add(fishId);
-            Debug.Log($"[Aquarium] SetUnlocked: id={fishId}. total unlocked={unlockedFishIds.Count}");
-            return true;
-        }
-
-        Debug.Log($"[Aquarium] SetUnlocked: id={fishId} ya estaba desbloqueado.");
-        return false;
-    }
-
-    public void RefreshFishesFromDatabase()
-    {
-        Debug.Log("[Aquarium] Refrescando peces...");
-
-        // Limpiar contenedor visual actual
-        DestroyCurrentFish();
-
-        // Limpiar lista interna de prefabs
-        fishes.Clear();
-
-        // Recorre todos los peces desbloqueados
-        foreach (int fishId in unlockedFishIds)
-        {
-            Debug.Log($"[Aquarium] Cargando prefab Fish_{fishId}");
-
-            // Cargar solo el prefab
-            GameObject prefab = Resources.Load<GameObject>($"Fish_{fishId}");
-            if (prefab != null)
-            {
-                fishes.Add(prefab);
-            }
-            else
-            {
-                Debug.LogWarning($"[Aquarium] No se encontró prefab Fish_{fishId} en Resources/");
-            }
-        }
-
-        // Mostrar mensaje si está vacío
-        bool empty = fishes.Count == 0;
-        noFishMessage.SetActive(empty);
-
-        Debug.Log($"[Aquarium] Refrescado. Prefabs en lista = {fishes.Count}");
-    }
-
-
-
-    public void ForceRefresh()
-    {
-        RefreshFishesFromDatabase();
-        // Si ya estás en la escena del acuario y quieres que se muestre inmediatamente:
-        if (fishes.Count > 0)
-            UpdateAquariumView();
-        else
-            noFishMessage?.SetActive(true);
-    }
-
-    private void OnEnable()
-    {
-        // Cuando el objeto se activa en la escena (o volvemos a ella), sincroniza visualmente
-        RefreshFishesFromDatabase();
-    }
-
-    public void UnlockFish(GameObject fishPrefab)
-    {
-        if (!fishes.Contains(fishPrefab))
-        {
-            fishes.Add(fishPrefab);
-            currentFishLogic.isFishUnlocked = true;
-            Debug.Log($"Se ha desbloqueado el pez {fishPrefab.name}");
-        }
-
-        UpdateAquariumView();
-    }
-
-    public void NextFish()
-    {
-        if (fishes.Count == 0) return;
-        currentIndex = (currentIndex + 1) % fishes.Count;
-       
-        if (isShowingInfo)
-        {
-            currentFishLogic = AssociateFish(currentIndex);
-            if (currentFishLogic != null && infoText != null)
-            {
-                infoText.text = "";
-                currentFishLogic.ViewInfo(this);
-            }
-        }
-        else
-        {
-            UpdateAquariumView();
-        }
-    }
-
-    public void PreviousFish()
-    {
-        if (fishes.Count == 0) return;
-
-        currentIndex = (currentIndex - 1 + fishes.Count) % fishes.Count;
-        if (isShowingInfo)
-        {
-            currentFishLogic = AssociateFish(currentIndex);
-            if (currentFishLogic != null && infoText != null)
-            {
-                infoText.text = "";
-                currentFishLogic.ViewInfo(this);
-            }
-        }
-        else
-        {
-            UpdateAquariumView();
-        }
-    }
-
-    private void UpdateAquariumView()
-    {
-        DestroyCurrentFish();
-
-        if (fishes.Count == 0)
-        {
-            noFishMessage.SetActive(true);
-            return;
-        }
-
-        noFishMessage.SetActive(false);
-
-        if (infoText != null)
-            infoText.gameObject.SetActive(false);
-
-        // Instanciar el pez
-        currentFishInstance = Instantiate(fishes[currentIndex], aquariumContainer);
-        currentFishInstance.SetActive(true);
-
-        // Reiniciar Animator si existe
-        Animator animator = currentFishInstance.GetComponent<Animator>();
-        if (animator != null)
-        {
-            animator.enabled = true;
-            animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
-        }
-
-        currentFishLogic = AssociateFish(currentIndex);
-        isShowingInfo = false;
-    }
-
-    public void DestroyCurrentFish()
-    {
+        // Destruye instancia anterior
         if (currentFishInstance != null)
         {
             Destroy(currentFishInstance);
             currentFishInstance = null;
         }
-    }
 
-    public void ShowFishInfo()
-    {
-        DestroyCurrentFish();
+        // Limpia contenedor
+        foreach (Transform child in aquariumContainer)
+            Destroy(child.gameObject);
 
-        if (infoText == null)
-        {
-            Debug.LogWarning("infoText no está asignado en el inspector.");
-            return;
-        }
-
-        infoText.gameObject.SetActive(true);
-        infoText.text = ""; 
-
-        currentFishLogic = AssociateFish(currentIndex);
-
-        if (currentFishLogic != null)
-            currentFishLogic.ViewInfo(this);
-
-        isShowingInfo = true;
-    }
-
-    public void ShowFish()
-    {
-        if (currentFishInstance != null) return;
-
-        if (fishes.Count == 0)
+        // Mostrar mensaje si no hay peces
+        if (unlockedFishPrefabs.Count == 0)
         {
             noFishMessage.SetActive(true);
             return;
         }
-
-        if (infoText != null)
-            infoText.gameObject.SetActive(false);
-
-        noFishMessage.SetActive(false);
-
-        // Instanciar el pez
-        currentFishInstance = Instantiate(fishes[currentIndex], aquariumContainer);
-        currentFishInstance.SetActive(true);
-
-        // Reiniciar Animator si existe
-        Animator animator = currentFishInstance.GetComponent<Animator>();
-        if (animator != null)
+        else
         {
-            animator.enabled = true;
-            animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+            noFishMessage.SetActive(false);
         }
 
-        currentFishLogic = AssociateFish(currentIndex);
-        isShowingInfo = false;
+        // Instancia el pez actual
+        currentIndex = Mathf.Clamp(currentIndex, 0, unlockedFishPrefabs.Count - 1);
+        SpawnFish(unlockedFishPrefabs[currentIndex]);
+    }
+
+    public void SpawnFish(GameObject prefab)
+    {
+        currentFishInstance = Instantiate(prefab, aquariumContainer);
+
+        // Asegurar Animator activo y reseteado
+        Animator anim = currentFishInstance.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.enabled = true;
+            anim.Play(0, -1, 0f);
+        }
+    }
+
+    #endregion
+
+    #region Navigation / Info
+
+    public void NextFish()
+    {
+        if (unlockedFishPrefabs.Count == 0) return;
+        currentIndex = (currentIndex + 1) % unlockedFishPrefabs.Count;
+        RefreshAquarium();
+    }
+
+    public void PreviousFish()
+    {
+        if (unlockedFishPrefabs.Count == 0) return;
+        currentIndex = (currentIndex - 1 + unlockedFishPrefabs.Count) % unlockedFishPrefabs.Count;
+        RefreshAquarium();
     }
 
     public void ToggleFishView()
     {
-        if (isShowingInfo)
-            ShowFish();
-        else
-            ShowFishInfo();
-    }
+        if (currentFishInstance == null) return;
 
-    public Fish AssociateFish(int index)
-    {
-        switch (index)
+        isShowingInfo = !isShowingInfo;
+
+        if (isShowingInfo)
         {
-            case 0: return new FishSample1();
-            case 1: return new FishSample2();
-            case 2: return new FishSample3();
-            case 3: return new FishSample4();
-            default: return null;
+            ShowFishInfo();
+        }
+        else
+        {
+            if (infoText != null) infoText.gameObject.SetActive(false);
+            currentFishInstance.SetActive(true);
         }
     }
+
+    public void ShowFishInfo()
+    {
+        if (currentFishInstance != null)
+            currentFishInstance.SetActive(false);
+
+        if (infoText != null)
+        {
+            infoText.gameObject.SetActive(true);
+            infoText.text = unlockedFishPrefabs[currentIndex].name; // puedes poner info detallada
+        }
+    }
+
+    #endregion
 }
