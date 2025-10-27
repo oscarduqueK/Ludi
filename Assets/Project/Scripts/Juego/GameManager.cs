@@ -77,40 +77,61 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return;
         gameEnded = true;
 
+        Time.timeScale = 0f; // pausa el juego mientras se cargan las escenas
+
         if (won)
         {
             if (tm == null || tm.currentLevel == null)
             {
                 Debug.LogWarning("GameOver: tm o currentLevel null");
                 SceneManager.LoadScene("Win4secondTime");
-                Time.timeScale = 0f;
                 return;
             }
 
             int fishId = tm.currentLevel.GetFishId();
-            bool unlockedNow = false;
 
-            if (fu != null && fishId >= 0)
+            if (fishId < 0)
             {
-                unlockedNow = fu.UnlockSequence(fishId);
-            }
-            else
-            {
-                Debug.LogWarning("GameOver: fu null o fishId inválido");
-            }
-
-            if (unlockedNow)
-                SceneManager.LoadScene("Win", LoadSceneMode.Additive);
-            else
+                Debug.LogWarning("GameOver: fishId inválido");
                 SceneManager.LoadScene("Win4secondTime");
+                return;
+            }
+
+            // Asegurarse de que exista Aquarium antes de desbloquear
+            if (Aquarium.Instance == null)
+            {
+                // Intentar encontrar un Aquarium existente en la escena
+                Aquarium existing = FindAnyObjectByType<Aquarium>();
+                if (existing != null)
+                    Aquarium.Instance = existing;
+                else
+                {
+                    // Crear dinámicamente un Aquarium vacío
+                    GameObject aquariumGO = new GameObject("Aquarium");
+                    Aquarium.Instance = aquariumGO.AddComponent<Aquarium>();
+                    DontDestroyOnLoad(aquariumGO);
+                    Aquarium.Instance.InitializeIfNeeded();
+                }
+            }
+
+            bool unlockedNow = fu != null && fu.UnlockSequence(fishId);
+
+            // Cargar la escena de Win de forma consistente
+            if (unlockedNow)
+            {
+                SceneManager.LoadScene("Win", LoadSceneMode.Additive);
+            }
+            else
+            {
+                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive);
+            }
         }
         else
         {
             SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
         }
-
-        Time.timeScale = 0f;
     }
+
 
     private void TryToUnlockFish()
     {
