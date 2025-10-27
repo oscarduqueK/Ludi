@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: 3fa462513ac97574ab598e3394108e53
+guid: 345dea02e9f1a0f49a8194769677db4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2684039448572371698
-    second: OPTIONS_text_0
+      213: 4957964591766669294
+    second: Aquari_0
   - first:
-      213: 1078314086628525452
-    second: OPTIONS_text_1
+      213: -4014649433810078054
+    second: Aquari_1
   - first:
-      213: -5842005050495671316
-    second: OPTIONS_text_2
+      213: 8549484648299422728
+    second: Aquari_2
   - first:
-      213: -84595187266247659
-    second: OPTIONS_text_3
+      213: -5624550453782795872
+    second: Aquari_3
   - first:
-      213: 1029112470202972382
-    second: OPTIONS_text_4
+      213: 8809010694668413145
+    second: Aquari_4
   - first:
-      213: -6203697591333704459
-    second: OPTIONS_text_5
-  - first:
-      213: 6600202109547466240
-    second: OPTIONS_text_6
+      213: -1958190894317547931
+    second: Aquari_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -114,28 +111,15 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OPTIONS_text_0
+      name: Aquari_0
       rect:
         serializedVersion: 2
-        x: 419
-        y: 1469
+        x: 7
+        y: 28
         width: 72
         height: 72
       alignment: 0
@@ -146,18 +130,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f2aa4768af9f3520800000000000000
-      internalID: 2684039448572371698
+      spriteID: ee7873d178a3ec440800000000000000
+      internalID: 4957964591766669294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OPTIONS_text_1
+      name: Aquari_1
       rect:
         serializedVersion: 2
-        x: 499
-        y: 1469
+        x: 87
+        y: 8
+        width: 72
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96f6084c991948c0800000000000000
+      internalID: -4014649433810078054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aquari_2
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 28
         width: 72
         height: 72
       alignment: 0
@@ -168,19 +174,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c850bc9d2f0f6fe00800000000000000
-      internalID: 1078314086628525452
+      spriteID: 804ea829dfed5a670800000000000000
+      internalID: 8549484648299422728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OPTIONS_text_2
+      name: Aquari_3
       rect:
         serializedVersion: 2
-        x: 579
-        y: 1469
-        width: 62
+        x: 237
+        y: 28
+        width: 72
         height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -190,18 +196,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce3ea2ddb570deea0800000000000000
-      internalID: -5842005050495671316
+      spriteID: 0a9a305992591f1b0800000000000000
+      internalID: -5624550453782795872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OPTIONS_text_3
+      name: Aquari_4
       rect:
         serializedVersion: 2
-        x: 649
-        y: 1469
+        x: 317
+        y: 28
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8e35efd84ef3a70800000000000000
+      internalID: 8809010694668413145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aquari_5
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 28
         width: 42
         height: 72
       alignment: 0
@@ -212,74 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 514a949102573def0800000000000000
-      internalID: -84595187266247659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OPTIONS_text_4
-      rect:
-        serializedVersion: 2
-        x: 699
-        y: 1469
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed87f54d654284e00800000000000000
-      internalID: 1029112470202972382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OPTIONS_text_5
-      rect:
-        serializedVersion: 2
-        x: 779
-        y: 1469
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5fcab96c8e908e9a0800000000000000
-      internalID: -6203697591333704459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OPTIONS_text_6
-      rect:
-        serializedVersion: 2
-        x: 859
-        y: 1469
-        width: 62
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00e4c5969d0a89b50800000000000000
-      internalID: 6600202109547466240
+      spriteID: 56e4ccda1cb13d4e0800000000000000
+      internalID: -1958190894317547931
       vertices: []
       indices: 
       edges: []
@@ -298,13 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      OPTIONS_text_0: 2684039448572371698
-      OPTIONS_text_1: 1078314086628525452
-      OPTIONS_text_2: -5842005050495671316
-      OPTIONS_text_3: -84595187266247659
-      OPTIONS_text_4: 1029112470202972382
-      OPTIONS_text_5: -6203697591333704459
-      OPTIONS_text_6: 6600202109547466240
+      Aquari_0: 4957964591766669294
+      Aquari_1: -4014649433810078054
+      Aquari_2: 8549484648299422728
+      Aquari_3: -5624550453782795872
+      Aquari_4: 8809010694668413145
+      Aquari_5: -1958190894317547931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
