@@ -892,7 +892,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1105254408}
         m_TargetAssemblyTypeName: MenuPausaUI, Assembly-CSharp
-        m_MethodName: GoToSaveFish
+        m_MethodName: GoToAquario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

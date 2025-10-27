@@ -68,6 +68,33 @@ public class Aquarium : MonoBehaviour
         }
     }
 
+    public void InitializeIfNeeded()
+    {
+        if (aquariumContainer == null)
+        {
+            GameObject containerGO = new GameObject("AquariumContainer");
+            containerGO.transform.SetParent(transform);
+            aquariumContainer = containerGO.transform;
+        }
+
+        if (infoText == null)
+        {
+            GameObject infoGO = new GameObject("InfoText");
+            infoGO.transform.SetParent(transform);
+            infoText = infoGO.AddComponent<TMPro.TextMeshProUGUI>();
+            infoText.gameObject.SetActive(false);
+        }
+
+        if (noFishMessage == null)
+        {
+            noFishMessage = new GameObject("NoFishMessage");
+            noFishMessage.transform.SetParent(transform);
+            noFishMessage.AddComponent<TMPro.TextMeshProUGUI>().text = "No fish yet!";
+            noFishMessage.SetActive(false);
+        }
+
+        Debug.Log("[Aquarium] InitializeIfNeeded completado.");
+    }
     void Start()
     {
         RefreshFishesFromDatabase();
@@ -79,53 +106,56 @@ public class Aquarium : MonoBehaviour
 
     public bool IsUnlocked(int fishId) => unlockedFishIds.Contains(fishId);
 
+    private FishData GetFishData(int id) => allFishDatabase.Find(x => x.id == id);
+
     public bool SetUnlocked(int fishId)
     {
-        if (IsUnlocked(fishId)) return false;
-
-        // añade al set lógico
-        unlockedFishIds.Add(fishId);
-
-        // sincroniza el FishData si existe
-        FishData fd = GetFishData(fishId);
-        if (fd != null)
+        if (!unlockedFishIds.Contains(fishId))
         {
-            fd.unlocked = true;
-            if (fd.prefab != null && !fishes.Contains(fd.prefab))
-            {
-                fishes.Add(fd.prefab);
-            }
+            unlockedFishIds.Add(fishId);
+            Debug.Log($"[Aquarium] SetUnlocked: id={fishId}. total unlocked={unlockedFishIds.Count}");
+            return true;
         }
 
-        Debug.Log($"[Aquarium] SetUnlocked: id={fishId}. total unlocked={unlockedFishIds.Count}. fishes list={fishes.Count}");
-        return true;
+        Debug.Log($"[Aquarium] SetUnlocked: id={fishId} ya estaba desbloqueado.");
+        return false;
     }
-
-    private FishData GetFishData(int id) => allFishDatabase.Find(x => x.id == id);
 
     public void RefreshFishesFromDatabase()
     {
-        // NO borramos el HashSet: es la fuente de la verdad
+        Debug.Log("[Aquarium] Refrescando peces...");
+
+        // Limpiar contenedor visual actual
+        DestroyCurrentFish();
+
+        // Limpiar lista interna de prefabs
         fishes.Clear();
 
-        foreach (var fd in allFishDatabase)
+        // Recorre todos los peces desbloqueados
+        foreach (int fishId in unlockedFishIds)
         {
-            if (fd == null) continue;
-            if (unlockedFishIds.Contains(fd.id) && fd.prefab != null)
+            Debug.Log($"[Aquarium] Cargando prefab Fish_{fishId}");
+
+            // Cargar solo el prefab
+            GameObject prefab = Resources.Load<GameObject>($"Fish_{fishId}");
+            if (prefab != null)
             {
-                fd.unlocked = true;
-                if (!fishes.Contains(fd.prefab))
-                    fishes.Add(fd.prefab);
+                fishes.Add(prefab);
             }
             else
             {
-                // mantener fd.unlocked coherente
-                fd.unlocked = fd.unlocked && unlockedFishIds.Contains(fd.id);
+                Debug.LogWarning($"[Aquarium] No se encontró prefab Fish_{fishId} en Resources/");
             }
         }
 
-        Debug.Log($"[Aquarium] Refrescado. fishes.Count = {fishes.Count}");
+        // Mostrar mensaje si está vacío
+        bool empty = fishes.Count == 0;
+        noFishMessage.SetActive(empty);
+
+        Debug.Log($"[Aquarium] Refrescado. Prefabs en lista = {fishes.Count}");
     }
+
+
 
     public void ForceRefresh()
     {
@@ -210,7 +240,18 @@ public class Aquarium : MonoBehaviour
         if (infoText != null)
             infoText.gameObject.SetActive(false);
 
+        // Instanciar el pez
         currentFishInstance = Instantiate(fishes[currentIndex], aquariumContainer);
+        currentFishInstance.SetActive(true);
+
+        // Reiniciar Animator si existe
+        Animator animator = currentFishInstance.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = true;
+            animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+        }
+
         currentFishLogic = AssociateFish(currentIndex);
         isShowingInfo = false;
     }
@@ -260,7 +301,18 @@ public class Aquarium : MonoBehaviour
 
         noFishMessage.SetActive(false);
 
+        // Instanciar el pez
         currentFishInstance = Instantiate(fishes[currentIndex], aquariumContainer);
+        currentFishInstance.SetActive(true);
+
+        // Reiniciar Animator si existe
+        Animator animator = currentFishInstance.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = true;
+            animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+        }
+
         currentFishLogic = AssociateFish(currentIndex);
         isShowingInfo = false;
     }
