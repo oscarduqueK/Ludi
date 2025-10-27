@@ -27,14 +27,7 @@ public class MenuPausaUI : MonoBehaviour
     }
     public void GoBackFromOptions()
     {
-        if (previousScene == "Pinball")
-        {
             SceneManager.UnloadSceneAsync("MenuOptions");
-        }
-        else
-        {
-            SceneManager.UnloadScene("MenuOptions");
-        }
     }
     public void GoToMainMenu()
     {
@@ -57,7 +50,7 @@ public class MenuPausaUI : MonoBehaviour
 
     public void GoToSaveFish()
     {
-        SceneManager.LoadScene("SaveFish");
+        SceneManager.LoadScene("NewFish");
     }
     public void ExitFromTheGame()
     {
