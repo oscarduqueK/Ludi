@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class MusicManager : MonoBehaviour
+public class DontDestroy : MonoBehaviour
 {
-    private static MusicManager instance;
+    private static DontDestroy instance;
 
     void Awake()
     {

@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 64348f4433e8d0246b696253db84a6a8
+guid: 35bcd18e3ec3b8e4e813265bb9f2a69c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8556175204139594784
-    second: AQUARIUM_text_0
+      213: 1450960814791432203
+    second: Jugar_0
   - first:
-      213: 8186423720180268389
-    second: AQUARIUM_text_1
+      213: 2471440304746605491
+    second: Jugar_1
   - first:
-      213: 5716507505397940862
-    second: AQUARIUM_text_2
+      213: -1901645987101170004
+    second: Jugar_2
   - first:
-      213: -7678966588186938654
-    second: AQUARIUM_text_3
+      213: 4181193306838403275
+    second: Jugar_3
   - first:
-      213: 8522354713972356818
-    second: AQUARIUM_text_4
-  - first:
-      213: 8288814391227489760
-    second: AQUARIUM_text_5
-  - first:
-      213: 7073729084212902892
-    second: AQUARIUM_text_6
-  - first:
-      213: 2191781534537124252
-    second: AQUARIUM_text_7
+      213: -1204621897740778900
+    second: Jugar_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -117,30 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AQUARIUM_text_0
+      name: Jugar_0
       rect:
         serializedVersion: 2
-        x: 379
-        y: 1349
-        width: 72
-        height: 72
+        x: 12
+        y: 17
+        width: 63
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 024febef304adb670800000000000000
-      internalID: 8556175204139594784
+      spriteID: b0897ac6c29d22410800000000000000
+      internalID: 1450960814791432203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AQUARIUM_text_1
+      name: Jugar_1
       rect:
         serializedVersion: 2
-        x: 459
-        y: 1329
-        width: 72
-        height: 92
+        x: 82
+        y: 17
+        width: 73
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56d3d2efff40c9170800000000000000
-      internalID: 8186423720180268389
+      spriteID: 3bb2108ecd15c4220800000000000000
+      internalID: 2471440304746605491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AQUARIUM_text_2
+      name: Jugar_2
       rect:
         serializedVersion: 2
-        x: 539
-        y: 1349
-        width: 72
-        height: 72
+        x: 152
+        y: 17
+        width: 73
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e72491fe94d155f40800000000000000
-      internalID: 5716507505397940862
+      spriteID: ca6a942dc0ffb95e0800000000000000
+      internalID: -1901645987101170004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AQUARIUM_text_3
+      name: Jugar_3
       rect:
         serializedVersion: 2
-        x: 619
-        y: 1349
-        width: 62
-        height: 72
+        x: 222
+        y: 17
+        width: 73
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e2360da294de6590800000000000000
-      internalID: -7678966588186938654
+      spriteID: bc8085fd825960a30800000000000000
+      internalID: 4181193306838403275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AQUARIUM_text_4
+      name: Jugar_4
       rect:
         serializedVersion: 2
-        x: 689
-        y: 1349
-        width: 82
-        height: 72
+        x: 302
+        y: 17
+        width: 73
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,74 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d6b230857c754670800000000000000
-      internalID: 8522354713972356818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AQUARIUM_text_5
-      rect:
-        serializedVersion: 2
-        x: 779
-        y: 1349
-        width: 42
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ed9246d5c8c70370800000000000000
-      internalID: 8288814391227489760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AQUARIUM_text_6
-      rect:
-        serializedVersion: 2
-        x: 829
-        y: 1349
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cebfbd5bf1fea2260800000000000000
-      internalID: 7073729084212902892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AQUARIUM_text_7
-      rect:
-        serializedVersion: 2
-        x: 909
-        y: 1349
-        width: 92
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c99885f61b5ca6e10800000000000000
-      internalID: 2191781534537124252
+      spriteID: c62018034c2584fe0800000000000000
+      internalID: -1204621897740778900
       vertices: []
       indices: 
       edges: []
@@ -323,14 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AQUARIUM_text_0: 8556175204139594784
-      AQUARIUM_text_1: 8186423720180268389
-      AQUARIUM_text_2: 5716507505397940862
-      AQUARIUM_text_3: -7678966588186938654
-      AQUARIUM_text_4: 8522354713972356818
-      AQUARIUM_text_5: 8288814391227489760
-      AQUARIUM_text_6: 7073729084212902892
-      AQUARIUM_text_7: 2191781534537124252
+      Jugar_0: 1450960814791432203
+      Jugar_1: 2471440304746605491
+      Jugar_2: -1901645987101170004
+      Jugar_3: 4181193306838403275
+      Jugar_4: -1204621897740778900
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

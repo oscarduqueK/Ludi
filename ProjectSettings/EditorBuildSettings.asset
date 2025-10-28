@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Win4secondTime.unity
     guid: 8878bf18857078a48ad43279f1f1135f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/SaveFish.unity
     guid: 52e65af7127c35b45b8966976dbdb398
   - enabled: 1
@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/NewFish.unity
     guid: 619cfb06f8eba074196f94a80384f502
+  - enabled: 1
+    path: Assets/Project/Scenes/Pinball_2.unity
+    guid: 518db66863e3a864aa5b579728158b48
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
