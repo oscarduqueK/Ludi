@@ -85,6 +85,6 @@ public class Aquarium : MonoBehaviour
             fishLogic.OnSpawn();
         }
 
-        infoText.text = data.fishName;
+        //infoText.text = data.fishName;
     }
 }

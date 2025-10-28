@@ -50,8 +50,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Peixos
+  - name: Bottom
     uniqueID: 1071760309
+    locked: 0
+  - name: Mid
+    uniqueID: 4085426435
+    locked: 0
+  - name: Top
+    uniqueID: 4140560885
     locked: 0
   m_RenderingLayers:
   - Default
