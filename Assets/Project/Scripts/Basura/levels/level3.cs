@@ -2,15 +2,15 @@
 
 public class level3 : levelConfig
 {
-    public new int fishToUnlock = 2;
-
-    public override int GetFishId()
-    {
-        return 2; // FishSample3
-    }
     public override void SetupLevel(trashmanagement generator)
     {
         Debug.Log("Nivel 3 configurado");
+    }
+
+    public override int GetFishId()
+    {
+        Debug.Log("Niga");
+        return 3;
     }
 
     public override void SpawnTrash(trashmanagement generator)

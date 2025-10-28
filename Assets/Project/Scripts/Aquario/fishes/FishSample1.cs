@@ -1,11 +1,45 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class FishSample1 : Fish
 {
-    public new bool isFishUnlocked = false;
-    public override void ViewInfo(Aquarium aquarium)
+   
+    public bool isFishUnlocked = false;
+
+    public string GetInfoString()
     {
-        aquarium.infoText.text = "Paco";
+        if (!isFishUnlocked)
+            return "???";
+        return fishName ?? "Unknown Fish";
+    }
+
+    
+    public void ViewInfo(TextMeshProUGUI infoText)
+    {
+        if (infoText == null) return;
+        infoText.text = GetInfoString();
+    }
+
+   
+    public override void OnSpawn()
+    {
+        base.OnSpawn();
+
+        if (isFishUnlocked)
+        {
+            Debug.Log($"{fishName} ha aparecido en el acuario (desbloqueado).");
+            if (animator != null)
+                animator.Play("nemoIdle"); 
+        }
+    }
+
+  
+    public override void OnUnlock()
+    {
+        base.OnUnlock();
+
+        isFishUnlocked = true;
+
+        Debug.Log($"{fishName} ha sido desbloqueado.");
     }
 }

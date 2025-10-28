@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private trashmanagement tm;
     [SerializeField] private fishUnlockement fu;
+    FishDatabase db = FishDatabase.Instance;
 
     private Fish currentFish;
 
@@ -33,8 +34,7 @@ public class GameManager : MonoBehaviour
         // Instancia fishUnlockement si no existe
         if (fu == null)
         {
-            GameObject fuGO = new GameObject("fishUnlockement");
-            fu = fuGO.AddComponent<fishUnlockement>();
+            fu = fishUnlockement.Instance;
         }
     }
 
@@ -77,61 +77,29 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return;
         gameEnded = true;
 
-        Time.timeScale = 0f; // pausa el juego mientras se cargan las escenas
+        Time.timeScale = 0f;
 
         if (won)
         {
-            if (tm == null || tm.currentLevel == null)
-            {
-                Debug.LogWarning("GameOver: tm o currentLevel null");
-                SceneManager.LoadScene("Win4secondTime");
-                return;
-            }
+            Debug.Log("¡Nivel completado!");
 
-            int fishId = tm.currentLevel.GetFishId();
+            TryToUnlockFish();
 
-            if (fishId < 0)
-            {
-                Debug.LogWarning("GameOver: fishId inválido");
-                SceneManager.LoadScene("Win4secondTime");
-                return;
-            }
+            int lastUnlockedFish = PlayerPrefs.GetInt("LastUnlockedFish", -1);
+            Debug.Log (PlayerPrefs.GetInt("LastUnlockedFish", 0));
 
-            // Asegurarse de que exista Aquarium antes de desbloquear
-            if (Aquarium.Instance == null)
+            if (lastUnlockedFish == -1 || !fu.IsUnlocked(lastUnlockedFish))
             {
-                // Intentar encontrar un Aquarium existente en la escena
-                Aquarium existing = FindAnyObjectByType<Aquarium>();
-                if (existing != null)
-                    Aquarium.Instance = existing;
-                else
-                {
-                    // Crear dinámicamente un Aquarium vacío
-                    GameObject aquariumGO = new GameObject("Aquarium");
-                    Aquarium.Instance = aquariumGO.AddComponent<Aquarium>();
-                    DontDestroyOnLoad(aquariumGO);
-                    Aquarium.Instance.InitializeIfNeeded();
-                }
-            }
-
-            bool unlockedNow = fu != null && fu.UnlockSequence(fishId);
-
-            // Cargar la escena de Win de forma consistente
-            if (unlockedNow)
-            {
-                SceneManager.LoadScene("Win", LoadSceneMode.Additive);
-            }
-            else
-            {
-                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive);
+                Debug.Log("Ganaste pero no hay pez nuevo, cargando escena de victoria normal...");
+                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive); 
             }
         }
         else
         {
-            SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
+            Debug.Log("Has perdido el nivel.");
+            SceneManager.LoadScene("Lose", LoadSceneMode.Additive); 
         }
     }
-
 
     private void TryToUnlockFish()
     {
@@ -142,20 +110,29 @@ public class GameManager : MonoBehaviour
         }
 
         int fishId = tm.currentLevel.GetFishId();
+        Debug.Log($"TryToUnlockFish: fishId={fishId}");
 
-        if (fu != null && fishId >= 0)
+        if (fishUnlockement.Instance != null && fishId >= 0)
         {
-            bool unlockedNow = fu.UnlockSequence(fishId);
+            bool unlockedNow = fishUnlockement.Instance.UnlockSequence(fishId);
 
-            // guarda o usa unlockedNow en GameOver o aquí mismo
             if (unlockedNow)
-                Debug.Log($"GameManager: fish {fishId} desbloqueado ahora.");
+            {
+                PlayerPrefs.SetInt("LastUnlockedFish", fishId);
+                PlayerPrefs.Save();
+
+                Debug.Log($"GameManager: fish {fishId} desbloqueado ahora, cargando Win");
+                SceneManager.LoadScene("Win");
+            }
             else
-                Debug.Log($"GameManager: fish {fishId} ya estaba desbloqueado.");
+            {
+                Debug.Log($"GameManager: fish {fishId} ya estaba desbloqueado, continúa flujo normal");
+                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive);
+            }
         }
         else
         {
-            Debug.LogWarning("TryToUnlockFish: fu null o fishId invalido");
+            Debug.LogWarning("TryToUnlockFish: fishUnlockement.Instance es null o fishId inválido");
         }
     }
 

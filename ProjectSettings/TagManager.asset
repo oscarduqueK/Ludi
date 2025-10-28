@@ -17,7 +17,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Peixos
   - Water
   - UI
   - 
@@ -50,8 +50,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Hola
-    uniqueID: 1094846795
+  - name: Peixos
+    uniqueID: 1071760309
     locked: 0
   m_RenderingLayers:
   - Default

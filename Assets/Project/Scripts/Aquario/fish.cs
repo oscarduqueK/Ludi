@@ -1,10 +1,48 @@
 ﻿using UnityEngine;
+using TMPro;
 
-public abstract class Fish
+public class Fish : MonoBehaviour
 {
-    public bool isFishUnlocked = false;
-    public virtual void ViewInfo(Aquarium aquarium)
+    [Header("Datos")]
+    public int fishId;
+    public string fishName;
+
+    [Header("Componentes opcionales")]
+    public Animator animator;
+    public TextMeshProUGUI nameText;
+
+    [HideInInspector]
+    public bool isInitialized = false;
+
+    public virtual void Initialize(FishData data)
     {
-        Debug.Log("A");
+        if (data == null)
+        {
+            Debug.LogWarning("Intento de inicializar un pez sin datos.");
+            return;
+        }
+
+        fishId = data.id;
+        fishName = data.fishName;
+
+        if (nameText != null)
+            nameText.text = fishName;
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+
+        isInitialized = true;
+    }
+
+    public virtual void OnSpawn()
+    {
+        if (!isInitialized)
+            Debug.LogWarning($"El pez {fishName} no ha sido inicializado antes de aparecer.");
+    }
+
+    public virtual void OnUnlock()
+    {
+        if (animator != null)
+            animator.SetTrigger("Unlock");
     }
 }

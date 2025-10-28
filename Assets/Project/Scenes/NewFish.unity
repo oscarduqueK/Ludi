@@ -1654,6 +1654,25 @@ GameObject:
   - component: {fileID: 911442030}
   - component: {fileID: 911442029}
   - component: {fileID: 911442028}
+  m_Layer: 0
+  m_Name: Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1632554388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911442027}
+  - component: {fileID: 911442030}
+  - component: {fileID: 911442029}
+  - component: {fileID: 911442028}
   - component: {fileID: 1632554390}
   - component: {fileID: 1632554389}
   m_Layer: 0
