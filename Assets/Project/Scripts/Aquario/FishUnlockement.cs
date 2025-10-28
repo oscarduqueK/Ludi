@@ -9,11 +9,12 @@ public class fishUnlockement : MonoBehaviour
     public FishDatabase fishDatabase;
 
     [HideInInspector]
-    public int lastUnlockedId = -1; 
+    public int lastUnlockedId = -1;
 
     void Awake()
     {
-        // Singleton
+
+
         if (Instance == null)
         {
             Instance = this;
@@ -25,12 +26,12 @@ public class fishUnlockement : MonoBehaviour
             return;
         }
 
-        // Si no está asignada la base de datos, intenta encontrarla
+        // Asignar la base de datos automáticamente
         if (fishDatabase == null)
         {
-            fishDatabase = FindAnyObjectByType<FishDatabase>();
+            fishDatabase = FishDatabase.Instance;
             if (fishDatabase == null)
-                Debug.LogError("No se encontró ningún FishDatabase en la escena.");
+                Debug.LogWarning("No se encontró ningún FishDatabase en la escena.");
         }
     }
 
@@ -40,6 +41,7 @@ public class fishUnlockement : MonoBehaviour
     /// </summary>
     public bool UnlockSequence(int fishId)
     {
+        // Accedemos a la base de datos directamente desde la instancia singleton
         FishData data = FishDatabase.Instance.GetFishDataById(fishId);
 
         if (data == null)
@@ -48,33 +50,29 @@ public class fishUnlockement : MonoBehaviour
             return false;
         }
 
-        int unlocked = PlayerPrefs.GetInt($"FishUnlocked_{fishId}", 0);
-        if (unlocked == 1) return false;
+        if (data.unlocked) // ya desbloqueado
+            return false;
 
-        PlayerPrefs.SetInt($"FishUnlocked_{fishId}", 1);
+        // Guardar en PlayerPrefs
+        PlayerPrefs.SetInt($"Fish_Unlocked_{fishId}", 1);
         PlayerPrefs.Save();
+
+        // Marcar en memoria
+        data.unlocked = true;
+        lastUnlockedId = fishId;
 
         Debug.Log($"fishUnlockement: Pez {fishId} desbloqueado");
         return true;
     }
 
-    /// <summary>
-    /// Devuelve si un pez está desbloqueado.
-    /// </summary>
     public bool IsUnlocked(int fishId)
     {
-        if (fishDatabase == null) return false;
-
-        FishData fish = fishDatabase.GetFishData(fishId);
+        FishData fish = FishDatabase.Instance.GetFishData(fishId);
         return fish != null && fish.unlocked;
     }
 
-    /// <summary>
-    /// Devuelve todos los peces (útil para el Aquarium).
-    /// </summary>
     public List<FishData> GetAllFishes()
     {
-        if (fishDatabase == null) return new List<FishData>();
-        return fishDatabase.fishes;
+        return FishDatabase.Instance != null ? FishDatabase.Instance.fishes : new List<FishData>();
     }
 }

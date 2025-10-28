@@ -32,13 +32,7 @@ public class FishSample1 : Fish
         {
             Debug.Log($"{fishName} ha aparecido en el acuario (desbloqueado).");
             if (animator != null)
-                animator.SetTrigger("Idle"); // trigger opcional, pon el que tengas
-        }
-        else
-        {
-            Debug.Log($"{fishName} está bloqueado; se mostrará interrogante en UI.");
-            if (animator != null)
-                animator.SetTrigger("Locked"); // opcional si tienes anim para "locked"
+                animator.Play("nemoIdle"); // trigger opcional, pon el que tengas
         }
     }
 
@@ -50,7 +44,5 @@ public class FishSample1 : Fish
         isFishUnlocked = true;
 
         Debug.Log($"{fishName} ha sido desbloqueado.");
-        if (animator != null)
-            animator.SetTrigger("Celebrate"); // animación opcional
     }
 }

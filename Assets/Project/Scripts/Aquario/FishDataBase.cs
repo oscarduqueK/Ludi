@@ -5,7 +5,11 @@ public class FishDatabase : MonoBehaviour
 {
     public static FishDatabase Instance;
 
-    public List<FishData> fishes;
+    [Header("Prefabs de peces (asignar desde el Inspector)")]
+    public List<GameObject> fishPrefabs = new List<GameObject>();
+
+    [HideInInspector]
+    public List<FishData> fishes = new List<FishData>();
 
     void Awake()
     {
@@ -13,48 +17,66 @@ public class FishDatabase : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            if (fishPrefabs == null || fishPrefabs.Count == 0)
+                Debug.LogWarning("FishDatabase: No hay prefabs asignados!");
+            else
+                InitializeFishData(); // aquí se llenan los FishData
         }
         else
         {
             Destroy(gameObject);
         }
+    }
 
-        // Inicializa la lista si está vacía
-        if (fishes == null)
-            fishes = new List<FishData>();
+    private void InitializeFishData()
+    {
+        fishes.Clear();
 
-        Debug.Log($"FishDatabase inicializado con {fishes.Count} peces.");
+        for (int i = 0; i < fishPrefabs.Count; i++)
+        {
+            FishData newFish = new FishData
+            {
+                id = i,
+                fishName = $"Fish_{i}",
+                prefab = fishPrefabs[i],
+                unlocked = PlayerPrefs.GetInt($"Fish_Unlocked_{i}", 0) == 1
+            };
 
-        //Creación de los pescaos de los cojones:
+            fishes.Add(newFish);
+        }
 
-        // Ejemplo: pez del nivel 1
-        fishes.Add(new FishData { id = 0, fishName = "Paco", prefab = fish_0 });
-        // referencia al prefab de Paco
+        Debug.Log($"[FishDatabase] Inicializados {fishes.Count} peces.");
     }
 
     public FishData GetFishDataById(int id)
     {
         return fishes.Find(f => f.id == id);
     }
-    private void LoadUnlockedFishes()
+
+    public FishData GetFishData(int id)
     {
-        foreach (var fish in fishes)
-        {
-            int saved = PlayerPrefs.GetInt($"Fish_Unlocked_{fish.id}", 0);
-            fish.unlocked = saved == 1;
-        }
+        return fishes.Find(f => f.id == id);
     }
 
     public void SaveFishUnlocked(int id)
     {
         PlayerPrefs.SetInt($"Fish_Unlocked_{id}", 1);
         PlayerPrefs.Save();
+
         FishData fish = GetFishData(id);
-        if (fish != null) fish.unlocked = true;
+        if (fish != null)
+        {
+            fish.unlocked = true;
+            Debug.Log($"[FishDatabase] Pez {id} guardado como desbloqueado.");
+        }
     }
 
-    public FishData GetFishData(int id)
+    private void LoadUnlockedFishes()
     {
-        return fishes.Find(f => f.id == id);
+        foreach (var fish in fishes)
+        {
+            fish.unlocked = PlayerPrefs.GetInt($"Fish_Unlocked_{fish.id}", 0) == 1;
+        }
     }
 }

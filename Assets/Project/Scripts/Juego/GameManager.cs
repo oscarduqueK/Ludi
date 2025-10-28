@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private trashmanagement tm;
     [SerializeField] private fishUnlockement fu;
+    FishDatabase db = FishDatabase.Instance;
 
     private Fish currentFish;
 
@@ -33,8 +34,7 @@ public class GameManager : MonoBehaviour
         // Instancia fishUnlockement si no existe
         if (fu == null)
         {
-            GameObject fuGO = new GameObject("fishUnlockement");
-            fu = fuGO.AddComponent<fishUnlockement>();
+            fu = fishUnlockement.Instance;
         }
     }
 
@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log($"GameManager: fish {fishId} ya estaba desbloqueado, continúa flujo normal");
+                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive);
             }
         }
         else

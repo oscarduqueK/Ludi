@@ -51,6 +51,13 @@ public class FishUnlockUI : MonoBehaviour
         // Inicializar y mostrar animación
         currentFishInstance.Initialize(data);
         currentFishInstance.isInitialized = true;
+
+        // Esto asegura que se actualice isFishUnlocked
+        if (data.unlocked)
+        {
+            currentFishInstance.OnUnlock(); // <--- Llamada que faltaba
+        }
+
         currentFishInstance.OnSpawn();
 
         // Actualizar UI

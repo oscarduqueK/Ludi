@@ -1,38 +1,41 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameInitializer : MonoBehaviour
 {
-    public string sceneToLoad = "MainMenu"; // la escena que viene después de la inicialización
-
     void Awake()
     {
-        // Inicializar FishDatabase si no existe
-        if (FishDatabase.Instance == null)
+        StartCoroutine(Wait(1.0f));
+        // Singleton: evitar duplicados del GameInitializer
+        GameInitializer existing = FindAnyObjectByType<GameInitializer>();
+        if (existing != null && existing != this)
         {
-            GameObject dbGO = new GameObject("FishDatabase");
-            dbGO.AddComponent<FishDatabase>();
+            Destroy(gameObject);
+            return;
         }
 
-        // Inicializar FishUnlockement si no existe
+        DontDestroyOnLoad(gameObject); // persistente
+
+        // Crear fishUnlockement si no existe
         if (fishUnlockement.Instance == null)
         {
             GameObject fuGO = new GameObject("fishUnlockement");
             fuGO.AddComponent<fishUnlockement>();
+            DontDestroyOnLoad(fuGO);
         }
-
-        // Si quieres, puedes inicializar otros sistemas globales aquí
-
-        DontDestroyOnLoad(gameObject); // El loader también persiste si lo deseas
     }
 
-    IEnumerator Start()
+    private void Start()
     {
-        // Pequeña espera para simular carga
-        yield return new WaitForSeconds(1f);
-
+        StartCoroutine(Wait(2.0f));
         // Cargar la siguiente escena
         SceneManager.LoadScene("Menu");
+    }
+
+    public IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }

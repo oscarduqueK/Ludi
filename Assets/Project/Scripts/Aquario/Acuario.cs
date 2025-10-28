@@ -17,14 +17,14 @@ public class Aquarium : MonoBehaviour
 
     void Start()
     {
+        if (FishDatabase.Instance == null || FishDatabase.Instance.fishes.Count == 0)
+        {
+            Debug.LogError("FishDatabase no inicializado o lista vacía");
+            return;
+        }
+
         allFish = FishDatabase.Instance.fishes;
-
-        //if (allFish == null || allFish.Count == 0)
-        //{
-        //    Debug.LogError("Aquarium: No hay peces en FishDatabase.");
-        //    return;
-        //}
-
+        currentIndex = 0;
         ShowFish(currentIndex);
     }
 
@@ -48,16 +48,23 @@ public class Aquarium : MonoBehaviour
 
     private void ShowFish(int index)
     {
+        if (allFish == null || allFish.Count == 0)
+        {
+            Debug.LogWarning("No hay peces para mostrar.");
+            return;
+        }
+
         if (currentFishInstance != null)
             Destroy(currentFishInstance);
 
-        FishData data = allFish[index];
+        index = Mathf.Clamp(index, 0, allFish.Count - 1);
+        currentIndex = index;
 
-        bool isUnlocked = PlayerPrefs.GetInt($"FishUnlocked_{data.id}", 0) == 1;
+        FishData data = allFish[index];
+        bool isUnlocked = data.unlocked;
 
         if (!isUnlocked)
         {
-            // Mostrar pez bloqueado (interrogante)
             infoText.text = "???";
             Debug.Log($"Pez {data.fishName} bloqueado.");
             return;
@@ -69,10 +76,9 @@ public class Aquarium : MonoBehaviour
             return;
         }
 
-        GameObject instance = Instantiate(data.prefab, spawnPoint.position, Quaternion.identity);
-        currentFishInstance = instance;
+        currentFishInstance = Instantiate(data.prefab, spawnPoint.position, Quaternion.identity);
 
-        Fish fishLogic = instance.GetComponent<Fish>();
+        Fish fishLogic = currentFishInstance.GetComponent<Fish>();
         if (fishLogic != null)
         {
             fishLogic.Initialize(data);
