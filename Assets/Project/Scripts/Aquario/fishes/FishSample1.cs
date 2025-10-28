@@ -3,24 +3,23 @@ using TMPro;
 
 public class FishSample1 : Fish
 {
-   
     public bool isFishUnlocked = false;
 
-    public string GetInfoString()
+    public override string GetInfoString()
     {
-        if (!isFishUnlocked)
+        if (!isFishUnlocked) // field heredado
             return "???";
-        return fishName ?? "Unknown Fish";
+
+        // Texto personalizado para este pez
+        return $"<b>{fishName}</b>\nPaco es un pez majete que hace cosas guays.";
     }
 
-    
     public void ViewInfo(TextMeshProUGUI infoText)
     {
         if (infoText == null) return;
         infoText.text = GetInfoString();
     }
 
-   
     public override void OnSpawn()
     {
         base.OnSpawn();
@@ -33,7 +32,6 @@ public class FishSample1 : Fish
         }
     }
 
-  
     public override void OnUnlock()
     {
         base.OnUnlock();

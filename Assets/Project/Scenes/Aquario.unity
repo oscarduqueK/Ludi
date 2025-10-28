@@ -163,37 +163,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &35945480
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 35945481}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &35945481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35945480}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17, y: 61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1056698606}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73113572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,16 +1346,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1730096492412787759, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 1730096492412787759, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 1915583441178129336, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: infoText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 214985485}
     - target: {fileID: 6779867305008275423, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -17
@@ -1397,11 +1366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7075860628523172437, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7075860628523172437, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7075860628523172437, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1443,6 +1412,22 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8319386556540462157, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+      propertyPath: aquarium
+      value: 
+      objectReference: {fileID: 965964597}
+    - target: {fileID: 8319386556540462157, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+      propertyPath: infoText
+      value: 
+      objectReference: {fileID: 214985485}
+    - target: {fileID: 8319386556540462157, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+      propertyPath: fadeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319386556540462157, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+      propertyPath: fishContainer
+      value: 
+      objectReference: {fileID: 965964599}
     - target: {fileID: 8884845986023206115, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_Name
       value: Acuario
@@ -1452,54 +1437,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
---- !u!1 &1056698604
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1056698606}
-  - component: {fileID: 1056698605}
-  m_Layer: 0
-  m_Name: Acuario (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1056698605
+--- !u!114 &965964597 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1915583441178129336, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+  m_PrefabInstance: {fileID: 965964596}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056698604}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5ac72478d190964e81e1dc9c90a2164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 35945481}
-  infoText: {fileID: 214985485}
-  transitionDelay: 0.2
---- !u!4 &1056698606
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &965964598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8319386556540462157, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+  m_PrefabInstance: {fileID: 965964596}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056698604}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 931, y: 595, z: 0.101611614}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 35945481}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3729e6a44ff0964ca0b64532b8cf7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &965964599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1730096492412787759, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+  m_PrefabInstance: {fileID: 965964596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1411885838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,9 +1547,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Aquarium, Assembly-CSharp
-        m_MethodName: ShowFishInfo
+      - m_Target: {fileID: 965964598}
+        m_TargetAssemblyTypeName: FishInfoPanel, Assembly-CSharp
+        m_MethodName: Learn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2164,9 +2128,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Aquarium, Assembly-CSharp
-        m_MethodName: ShowFish
+      - m_Target: {fileID: 965964598}
+        m_TargetAssemblyTypeName: FishInfoPanel, Assembly-CSharp
+        m_MethodName: View
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2765,7 +2729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 965964597}
         m_TargetAssemblyTypeName: Aquarium, Assembly-CSharp
         m_MethodName: NextFish
         m_Mode: 1
@@ -2897,7 +2861,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 965964597}
         m_TargetAssemblyTypeName: Aquarium, Assembly-CSharp
         m_MethodName: PreviousFish
         m_Mode: 1
@@ -3226,5 +3190,4 @@ SceneRoots:
   - {fileID: 544671917}
   - {fileID: 771376686}
   - {fileID: 333754909}
-  - {fileID: 1056698606}
   - {fileID: 1604186407}

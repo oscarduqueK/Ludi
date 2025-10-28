@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 336678688636200407}
   - component: {fileID: 4259940910130370563}
+  - component: {fileID: -4893482876727154538}
   m_Layer: 3
-  m_Name: fish_2
+  m_Name: Fish_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 873167025881649874}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37, y: 2.54, z: 1000}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,3 +88,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4893482876727154538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873167025881649874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cc7608e39a63640b681755578a351c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishId: 2
+  fishName: 
+  animator: {fileID: 0}
+  nameText: {fileID: 0}
+  isInitialized: 0
+  isFishUnlocked: 0

@@ -69,6 +69,10 @@ public class Aquarium : MonoBehaviour
             Debug.Log($"Pez {data.fishName} bloqueado.");
             return;
         }
+        else
+        {
+            Destroy(infoText);
+        }
 
         if (data.prefab == null)
         {
@@ -85,6 +89,20 @@ public class Aquarium : MonoBehaviour
             fishLogic.OnSpawn();
         }
 
-        //infoText.text = data.fishName;
+        
+    }
+
+    public FishData GetCurrentFishData()
+    {
+        if (allFish == null || allFish.Count == 0) return null;
+        // asegúrate de que currentIndex esté dentro de rango
+        currentIndex = Mathf.Clamp(currentIndex, 0, allFish.Count - 1);
+        return allFish[currentIndex];
+    }
+
+    
+    public GameObject GetCurrentFishInstance()
+    {
+        return currentFishInstance;
     }
 }

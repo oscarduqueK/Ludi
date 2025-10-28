@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7075860628523172437}
   - component: {fileID: 1915583441178129336}
+  - component: {fileID: 8319386556540462157}
   m_Layer: 0
   m_Name: Acuario
   m_TagString: Untagged
@@ -79,3 +80,21 @@ MonoBehaviour:
   spawnPoint: {fileID: 1730096492412787759}
   infoText: {fileID: 0}
   transitionDelay: 0.2
+--- !u!114 &8319386556540462157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8884845986023206115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3729e6a44ff0964ca0b64532b8cf7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aquarium: {fileID: 0}
+  infoPanel: {fileID: 0}
+  infoText: {fileID: 0}
+  fishGroup: {fileID: 0}
+  panelGroup: {fileID: 0}
+  fadeDuration: 0.4
