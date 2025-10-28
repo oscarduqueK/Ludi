@@ -1,55 +1,61 @@
 fileFormatVersion: 2
-guid: 8152c33e33842b94b8e91cf959670717
+guid: 17c6536924eeb7a469e9a4e07a687640
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2475041017337298667
-    second: TAP_TEXT_0
+      213: 4018296831178238229
+    second: TOCA_BOMBOLLA_TEXT_0
   - first:
-      213: 6869488401408449682
-    second: TAP_TEXT_1
+      213: -6975349658161670049
+    second: TOCA_BOMBOLLA_TEXT_1
   - first:
-      213: -8073524075056434696
-    second: TAP_TEXT_2
+      213: 1122006258833930396
+    second: TOCA_BOMBOLLA_TEXT_2
   - first:
-      213: -5537314252804178841
-    second: TAP_TEXT_3
+      213: 5355323946915002948
+    second: TOCA_BOMBOLLA_TEXT_3
   - first:
-      213: 1066698013168512978
-    second: TAP_TEXT_4
+      213: 3073856787269167898
+    second: TOCA_BOMBOLLA_TEXT_4
   - first:
-      213: -1821844567549204781
-    second: TAP_TEXT_5
+      213: 4621727625953343139
+    second: TOCA_BOMBOLLA_TEXT_5
   - first:
-      213: -5938903235769536103
-    second: TAP_TEXT_6
+      213: -5635581730391572517
+    second: TOCA_BOMBOLLA_TEXT_6
   - first:
-      213: 7670148837743620455
-    second: TAP_TEXT_7
+      213: -5420705820709962838
+    second: TOCA_BOMBOLLA_TEXT_7
   - first:
-      213: -7100041108129534797
-    second: TAP_TEXT_8
+      213: -3584346726390591407
+    second: TOCA_BOMBOLLA_TEXT_8
   - first:
-      213: -6805403317982430336
-    second: TAP_TEXT_9
+      213: 4518790913728786486
+    second: TOCA_BOMBOLLA_TEXT_9
   - first:
-      213: -445479044817473759
-    second: TAP_TEXT_10
+      213: -1561948698930569928
+    second: TOCA_BOMBOLLA_TEXT_10
   - first:
-      213: -5637062943145493729
-    second: TAP_TEXT_11
+      213: -3516991621327230069
+    second: TOCA_BOMBOLLA_TEXT_11
   - first:
-      213: 8780624807472064998
-    second: TAP_TEXT_12
+      213: -7880075162552853918
+    second: TOCA_BOMBOLLA_TEXT_12
   - first:
-      213: -3844063914512584131
-    second: TAP_TEXT_13
+      213: -2082308876772263656
+    second: TOCA_BOMBOLLA_TEXT_13
   - first:
-      213: -4685949354493572018
-    second: TAP_TEXT_14
+      213: -1401191240502254532
+    second: TOCA_BOMBOLLA_TEXT_14
   - first:
-      213: 7140046071843173957
-    second: TAP_TEXT_15
+      213: 7341138227113073312
+    second: TOCA_BOMBOLLA_TEXT_15
+  - first:
+      213: 3277360490840006291
+    second: TOCA_BOMBOLLA_TEXT_16
+  - first:
+      213: -3252944456390762750
+    second: TOCA_BOMBOLLA_TEXT_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,82 +147,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TAP_TEXT_0
+      name: TOCA_BOMBOLLA_TEXT_0
       rect:
         serializedVersion: 2
-        x: 319
-        y: 509
+        x: 37
+        y: 368
         width: 52
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bee39e221bc195220800000000000000
-      internalID: 2475041017337298667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TAP_TEXT_1
-      rect:
-        serializedVersion: 2
-        x: 379
-        y: 509
-        width: 42
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29cdd921e43555f50800000000000000
-      internalID: 6869488401408449682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TAP_TEXT_2
-      rect:
-        serializedVersion: 2
-        x: 439
-        y: 489
-        width: 42
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f172bc01a415ff80800000000000000
-      internalID: -8073524075056434696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TAP_TEXT_3
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 509
-        width: 32
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,40 +179,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76c36e766028723b0800000000000000
-      internalID: -5537314252804178841
+      spriteID: 519e4789dabd3c730800000000000000
+      internalID: 4018296831178238229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_4
+      name: TOCA_BOMBOLLA_TEXT_1
       rect:
         serializedVersion: 2
-        x: 569
-        y: 509
-        width: 32
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2df268df03cadce00800000000000000
-      internalID: 1066698013168512978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TAP_TEXT_5
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 509
+        x: 87
+        y: 368
         width: 42
         height: 52
       alignment: 0
@@ -270,41 +201,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d62143b40287b6e0800000000000000
-      internalID: -1821844567549204781
+      spriteID: f5891216174923f90800000000000000
+      internalID: -6975349658161670049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_6
+      name: TOCA_BOMBOLLA_TEXT_2
       rect:
         serializedVersion: 2
-        x: 709
-        y: 509
+        x: 137
+        y: 368
         width: 42
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 991f98409f6c49da0800000000000000
-      internalID: -5938903235769536103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TAP_TEXT_7
-      rect:
-        serializedVersion: 2
-        x: 759
-        y: 509
-        width: 32
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -314,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7617510dab7d17a60800000000000000
-      internalID: 7670148837743620455
+      spriteID: c98bf8d6fba229f00800000000000000
+      internalID: 1122006258833930396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_8
+      name: TOCA_BOMBOLLA_TEXT_3
       rect:
         serializedVersion: 2
-        x: 809
-        y: 509
+        x: 187
+        y: 368
         width: 42
-        height: 72
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,42 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bca443da36977d90800000000000000
-      internalID: -7100041108129534797
+      spriteID: 44af20981cee15a40800000000000000
+      internalID: 5355323946915002948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_9
+      name: TOCA_BOMBOLLA_TEXT_4
       rect:
         serializedVersion: 2
-        x: 859
-        y: 509
-        width: 42
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08b74662db95e81a0800000000000000
-      internalID: -6805403317982430336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TAP_TEXT_10
-      rect:
-        serializedVersion: 2
-        x: 909
-        y: 509
+        x: 257
+        y: 368
         width: 12
-        height: 72
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,18 +267,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12f26c24b2751d9f0800000000000000
-      internalID: -445479044817473759
+      spriteID: a1b2a97467888aa20800000000000000
+      internalID: 3073856787269167898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_11
+      name: TOCA_BOMBOLLA_TEXT_5
       rect:
         serializedVersion: 2
-        x: 939
-        y: 509
+        x: 277
+        y: 368
         width: 42
         height: 52
       alignment: 0
@@ -402,18 +289,194 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1b7b41ae1125c1b0800000000000000
-      internalID: -5637062943145493729
+      spriteID: 3a6fe81f9cca32040800000000000000
+      internalID: 4621727625953343139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_12
+      name: TOCA_BOMBOLLA_TEXT_6
       rect:
         serializedVersion: 2
-        x: 999
-        y: 529
+        x: 357
+        y: 368
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf345956446ac1b0800000000000000
+      internalID: -5635581730391572517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_7
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 368
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabb0b4b6c8c5c4b0800000000000000
+      internalID: -5420705820709962838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_8
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 368
+        width: 72
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15097ad94a7d14ec0800000000000000
+      internalID: -3584346726390591407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_9
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 368
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630311bf468f5be30800000000000000
+      internalID: 4518790913728786486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_10
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 368
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d1cd21fe7d25ae0800000000000000
+      internalID: -1561948698930569928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_11
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 368
+        width: 12
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8be3c411c2213fc0800000000000000
+      internalID: -3516991621327230069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_12
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 368
+        width: 12
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a98acd36954a290800000000000000
+      internalID: -7880075162552853918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_13
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 368
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819b85feb172a13e0800000000000000
+      internalID: -2082308876772263656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOCA_BOMBOLLA_TEXT_14
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 388
         width: 12
         height: 52
       alignment: 0
@@ -424,18 +487,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e9ea5b9dbb0bd970800000000000000
-      internalID: 8780624807472064998
+      spriteID: c3469779df7fd8ce0800000000000000
+      internalID: -1401191240502254532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_13
+      name: TOCA_BOMBOLLA_TEXT_15
       rect:
         serializedVersion: 2
-        x: 999
-        y: 509
+        x: 727
+        y: 368
         width: 12
         height: 12
       alignment: 0
@@ -446,18 +509,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3274998c3427aac0800000000000000
-      internalID: -3844063914512584131
+      spriteID: 0aa9d129256f0e560800000000000000
+      internalID: 7341138227113073312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_14
+      name: TOCA_BOMBOLLA_TEXT_16
       rect:
         serializedVersion: 2
-        x: 579
-        y: 289
+        x: 297
+        y: 118
         width: 202
         height: 192
       alignment: 0
@@ -468,18 +531,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4c80f9a3e928feb0800000000000000
-      internalID: -4685949354493572018
+      spriteID: 39e1b6190068b7d20800000000000000
+      internalID: 3277360490840006291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TAP_TEXT_15
+      name: TOCA_BOMBOLLA_TEXT_17
       rect:
         serializedVersion: 2
-        x: 669
-        y: 219
+        x: 387
+        y: 48
         width: 162
         height: 172
       alignment: 0
@@ -490,8 +553,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 546b220a21a861360800000000000000
-      internalID: 7140046071843173957
+      spriteID: 20f90c270483bd2d0800000000000000
+      internalID: -3252944456390762750
       vertices: []
       indices: 
       edges: []
@@ -510,22 +573,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TAP_TEXT_0: 2475041017337298667
-      TAP_TEXT_1: 6869488401408449682
-      TAP_TEXT_10: -445479044817473759
-      TAP_TEXT_11: -5637062943145493729
-      TAP_TEXT_12: 8780624807472064998
-      TAP_TEXT_13: -3844063914512584131
-      TAP_TEXT_14: -4685949354493572018
-      TAP_TEXT_15: 7140046071843173957
-      TAP_TEXT_2: -8073524075056434696
-      TAP_TEXT_3: -5537314252804178841
-      TAP_TEXT_4: 1066698013168512978
-      TAP_TEXT_5: -1821844567549204781
-      TAP_TEXT_6: -5938903235769536103
-      TAP_TEXT_7: 7670148837743620455
-      TAP_TEXT_8: -7100041108129534797
-      TAP_TEXT_9: -6805403317982430336
+      TOCA_BOMBOLLA_TEXT_0: 4018296831178238229
+      TOCA_BOMBOLLA_TEXT_1: -6975349658161670049
+      TOCA_BOMBOLLA_TEXT_10: -1561948698930569928
+      TOCA_BOMBOLLA_TEXT_11: -3516991621327230069
+      TOCA_BOMBOLLA_TEXT_12: -7880075162552853918
+      TOCA_BOMBOLLA_TEXT_13: -2082308876772263656
+      TOCA_BOMBOLLA_TEXT_14: -1401191240502254532
+      TOCA_BOMBOLLA_TEXT_15: 7341138227113073312
+      TOCA_BOMBOLLA_TEXT_16: 3277360490840006291
+      TOCA_BOMBOLLA_TEXT_17: -3252944456390762750
+      TOCA_BOMBOLLA_TEXT_2: 1122006258833930396
+      TOCA_BOMBOLLA_TEXT_3: 5355323946915002948
+      TOCA_BOMBOLLA_TEXT_4: 3073856787269167898
+      TOCA_BOMBOLLA_TEXT_5: 4621727625953343139
+      TOCA_BOMBOLLA_TEXT_6: -5635581730391572517
+      TOCA_BOMBOLLA_TEXT_7: -5420705820709962838
+      TOCA_BOMBOLLA_TEXT_8: -3584346726390591407
+      TOCA_BOMBOLLA_TEXT_9: 4518790913728786486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

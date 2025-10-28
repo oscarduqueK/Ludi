@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 1740990422}
   - component: {fileID: 1740990421}
   m_Layer: 5
-  m_Name: Retry
+  m_Name: Nivells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,8 +946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 119}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 2.6, y: 118.1}
+  m_SizeDelta: {x: 127.5305, y: 22.6374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1740990418
 MonoBehaviour:
@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2a142670ccd98854a91c4059ef7f0098, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 674e8e35f538a6348b0c0978e6442a2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
