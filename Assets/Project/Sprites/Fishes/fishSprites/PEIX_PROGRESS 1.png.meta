@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PEIX_PROGRESS 1_0: -4830801521943517769
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
