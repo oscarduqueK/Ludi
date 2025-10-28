@@ -50,7 +50,7 @@ public class MenuPausaUI : MonoBehaviour
 
     public void GoToSaveFish()
     {
-        SceneManager.LoadScene("NewFish");
+        SceneManager.LoadScene("Fish");
     }
     public void ExitFromTheGame()
     {

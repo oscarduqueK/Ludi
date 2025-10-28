@@ -5,7 +5,6 @@ public class callScene : MonoBehaviour
 {
     void Update()
     {
-        //Load scene 1
         Scene scene = SceneManager.GetSceneByName("MenuPausa");
         if (Input.GetKeyDown(KeyCode.Escape) && !scene.isLoaded)
         {
