@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,14 @@ public class GameManager : MonoBehaviour
 
     private bool gameEnded = false;
 
+    [Header("Audio Clips")]
+    public AudioClip victoryClip;
+    public AudioClip defeatClip;
+
+    [Header("Audio Mixer Groups")]
+    public AudioMixerGroup victoryMixerGroup;
+    public AudioMixerGroup defeatMixerGroup;
+
     void Awake()
     {
         if (Instance == null)
@@ -30,8 +39,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        // Instancia fishUnlockement si no existe
         if (fu == null)
         {
             fu = fishUnlockement.Instance;
@@ -81,23 +88,17 @@ public class GameManager : MonoBehaviour
 
         if (won)
         {
+            PlayVictorySound();
+
             Debug.Log("¡Nivel completado!");
-
             TryToUnlockFish();
-
-            int lastUnlockedFish = PlayerPrefs.GetInt("LastUnlockedFish", -1);
-            Debug.Log (PlayerPrefs.GetInt("LastUnlockedFish", 0));
-
-            if (lastUnlockedFish == -1 || !fu.IsUnlocked(lastUnlockedFish))
-            {
-                Debug.Log("Ganaste pero no hay pez nuevo, cargando escena de victoria normal...");
-                SceneManager.LoadScene("Win4secondTime", LoadSceneMode.Additive); 
-            }
         }
         else
         {
+            PlayDefeatSound();
+
             Debug.Log("Has perdido el nivel.");
-            SceneManager.LoadScene("Lose", LoadSceneMode.Additive); 
+            SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
         }
     }
 
@@ -143,4 +144,32 @@ public class GameManager : MonoBehaviour
         gameEnded = false;
         Time.timeScale = 1f;
     }
+
+    #region Audio
+
+    private void PlayVictorySound()
+    {
+        if (victoryClip == null) return;
+
+        GameObject tempAudio = new GameObject("VictoryAudio");
+        AudioSource source = tempAudio.AddComponent<AudioSource>();
+        source.clip = victoryClip;
+        source.outputAudioMixerGroup = victoryMixerGroup;
+        source.Play();
+        Destroy(tempAudio, victoryClip.length);
+    }
+
+    private void PlayDefeatSound()
+    {
+        if (defeatClip == null) return;
+
+        GameObject tempAudio = new GameObject("DefeatAudio");
+        AudioSource source = tempAudio.AddComponent<AudioSource>();
+        source.clip = defeatClip;
+        source.outputAudioMixerGroup = defeatMixerGroup;
+        source.Play();
+        Destroy(tempAudio, defeatClip.length);
+    }
+
+    #endregion
 }
