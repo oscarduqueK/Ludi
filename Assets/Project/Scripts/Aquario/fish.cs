@@ -14,9 +14,6 @@ public class Fish : MonoBehaviour
     [HideInInspector]
     public bool isInitialized = false;
 
-    /// <summary>
-    /// Inicializa el pez con sus datos.
-    /// </summary>
     public virtual void Initialize(FishData data)
     {
         if (data == null)
@@ -37,18 +34,12 @@ public class Fish : MonoBehaviour
         isInitialized = true;
     }
 
-    /// <summary>
-    /// Método que puede sobrescribirse para animaciones o efectos al aparecer.
-    /// </summary>
     public virtual void OnSpawn()
     {
         if (!isInitialized)
             Debug.LogWarning($"El pez {fishName} no ha sido inicializado antes de aparecer.");
     }
 
-    /// <summary>
-    /// Método que puede sobrescribirse para efectos al desbloquear.
-    /// </summary>
     public virtual void OnUnlock()
     {
         if (animator != null)

@@ -1319,6 +1319,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7682651572709807592, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 67383221}
+    - target: {fileID: 7682651572709807592, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8884845986023206115, guid: 5bd44da50ef944846808cc8e0e19d499, type: 3}
       propertyPath: m_Name
       value: Acuario

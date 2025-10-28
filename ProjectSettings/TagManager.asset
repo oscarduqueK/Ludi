@@ -17,7 +17,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Peixos
   - Water
   - UI
   - 
@@ -49,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Peixos
+    uniqueID: 1071760309
     locked: 0
   m_RenderingLayers:
   - Default

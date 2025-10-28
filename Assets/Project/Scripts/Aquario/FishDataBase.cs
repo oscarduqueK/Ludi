@@ -21,7 +21,7 @@ public class FishDatabase : MonoBehaviour
             if (fishPrefabs == null || fishPrefabs.Count == 0)
                 Debug.LogWarning("FishDatabase: No hay prefabs asignados!");
             else
-                InitializeFishData(); // aquí se llenan los FishData
+                InitializeFishData();
         }
         else
         {
