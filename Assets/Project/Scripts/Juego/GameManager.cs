@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     private bool gameEnded = false;
 
+    [Header("UI")]
+    public TMP_Text trashText;
+    
     [Header("Audio Clips")]
     public AudioClip victoryClip;
     public AudioClip defeatClip;
@@ -52,10 +57,18 @@ public class GameManager : MonoBehaviour
         trashCollected += amount;
         Debug.Log("Basura recogida: " + trashCollected);
 
+        UpdateTrashText();
+
         if (trashCollected >= requiredTrashToWin)
         {
             GameOver(true);
         }
+    }
+
+    private void UpdateTrashText()
+    {
+        if (trashText != null)
+            trashText.text = trashCollected + "/" + requiredTrashToWin;
     }
 
     public void RestarVida()
@@ -72,6 +85,7 @@ public class GameManager : MonoBehaviour
             GameOver(false);
         }
     }
+
     public void GameOver(bool won)
     {
         if (gameEnded) return;
@@ -136,6 +150,7 @@ public class GameManager : MonoBehaviour
         vidas = 3;
         gameEnded = false;
         Time.timeScale = 1f;
+        UpdateTrashText();
     }
 
     #region Audio
