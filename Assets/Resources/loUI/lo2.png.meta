@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: c56419cf732cec24dac5e900a28b3313
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5902011122471008677
+    second: PEIX_VOLADOR_TEXTa_0
+  - first:
+      213: -5421817428011453326
+    second: PEIX_VOLADOR_TEXTa_1
+  - first:
+      213: 807715631018034425
+    second: PEIX_VOLADOR_TEXTa_2
+  - first:
+      213: 4856205194637651556
+    second: PEIX_VOLADOR_TEXTa_3
+  - first:
+      213: 9000585397050001638
+    second: PEIX_VOLADOR_TEXTa_4
+  - first:
+      213: -6716930826108865113
+    second: PEIX_VOLADOR_TEXTa_5
+  - first:
+      213: -938801063085413146
+    second: PEIX_VOLADOR_TEXTa_6
+  - first:
+      213: -7100756358938737122
+    second: PEIX_VOLADOR_TEXTa_7
+  - first:
+      213: -3946619729834769963
+    second: PEIX_VOLADOR_TEXTa_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_0
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 289
+        width: 82
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5606b08728d71ea0800000000000000
+      internalID: -5902011122471008677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 289
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274fa5676c5d1c4b0800000000000000
+      internalID: -5421817428011453326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 289
+        width: 52
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f44c524615953b00800000000000000
+      internalID: 807715631018034425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 289
+        width: 82
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ea8ce25e4b46340800000000000000
+      internalID: 4856205194637651556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 159
+        width: 72
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8cbb14bb088ec70800000000000000
+      internalID: 9000585397050001638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 159
+        width: 62
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5f8e0600ba8c2a0800000000000000
+      internalID: -6716930826108865113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 159
+        width: 212
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ece8083865b8f2f0800000000000000
+      internalID: -938801063085413146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_7
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 159
+        width: 62
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e164cd486bb057d90800000000000000
+      internalID: -7100756358938737122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PEIX_VOLADOR_TEXTa_8
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 159
+        width: 82
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d186ab044aca39c0800000000000000
+      internalID: -3946619729834769963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PEIX_VOLADOR_TEXTa_0: -5902011122471008677
+      PEIX_VOLADOR_TEXTa_1: -5421817428011453326
+      PEIX_VOLADOR_TEXTa_2: 807715631018034425
+      PEIX_VOLADOR_TEXTa_3: 4856205194637651556
+      PEIX_VOLADOR_TEXTa_4: 9000585397050001638
+      PEIX_VOLADOR_TEXTa_5: -6716930826108865113
+      PEIX_VOLADOR_TEXTa_6: -938801063085413146
+      PEIX_VOLADOR_TEXTa_7: -7100756358938737122
+      PEIX_VOLADOR_TEXTa_8: -3946619729834769963
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -35,10 +35,6 @@ public class fishUnlockement : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Intenta desbloquear un pez según su ID.
-    /// Devuelve true si se ha desbloqueado por primera vez, false si ya estaba desbloqueado.
-    /// </summary>
     public bool UnlockSequence(int fishId)
     {
         // Accedemos a la base de datos directamente desde la instancia singleton
