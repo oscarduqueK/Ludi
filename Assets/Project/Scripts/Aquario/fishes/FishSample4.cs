@@ -32,6 +32,12 @@ public class FishSample4 : Fish
             if (animator != null)
                 animator.Play("bacallaIdle");
         }
+        if (animator == null)
+            animator = GetComponent<Animator>();
+
+        if (animator != null && !animator.isActiveAndEnabled)
+            animator.enabled = true;
+
     }
 
     public override void OnUnlock()

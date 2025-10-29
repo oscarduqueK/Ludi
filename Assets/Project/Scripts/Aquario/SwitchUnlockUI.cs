@@ -4,7 +4,7 @@ using TMPro;
 public class FishInfoPanel : MonoBehaviour
 {
     public Aquarium aquarium;
-    public TextMeshProUGUI infoText;
+    public TextMeshProUGUI infoText; // único texto usado para todo
 
     private GameObject currentFishInstance;
     private SpriteRenderer currentRenderer;
@@ -12,41 +12,45 @@ public class FishInfoPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        // Suscribirse al evento
         Aquarium.OnFishChanged += ClearInfo;
     }
 
     private void OnDisable()
     {
-        // Evitar errores al salir de escena
         Aquarium.OnFishChanged -= ClearInfo;
     }
 
-    // Se ejecuta automáticamente al cambiar de pez
+    // Limpia el texto y muestra el pez correcto al cambiar de flecha
     private void ClearInfo()
     {
-        if (infoText != null)
-        {
-            infoText.text = "";
-            infoText.gameObject.SetActive(false);
-        }
+        ResetVisualState();
     }
 
     public void Learn()
     {
         FishData data = aquarium != null ? aquarium.GetCurrentFishData() : null;
-        if (data == null || !data.unlocked)
+        if (data == null)
+            return;
+
+        currentFishInstance = aquarium.GetCurrentFishInstance();
+        if (currentFishInstance != null)
         {
-            infoText.text = "Encara no has desbloquejat aquest peix";
+            currentFish = currentFishInstance.GetComponent<Fish>();
+            currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
+        }
+
+        // Si el pez está bloqueado
+        if (!data.unlocked)
+        {
+            if (currentRenderer != null)
+                currentRenderer.enabled = false;
+
+            infoText.gameObject.SetActive(true);
+            infoText.text = "Encara no has desbloquejat aquest peix\n\n???";
             return;
         }
 
-        currentFishInstance = aquarium.GetCurrentFishInstance();
-        if (currentFishInstance == null) return;
-
-        currentFish = currentFishInstance.GetComponent<Fish>();
-        currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
-
+        // Si el pez está desbloqueado
         if (currentRenderer != null)
             currentRenderer.enabled = false;
 
@@ -59,18 +63,28 @@ public class FishInfoPanel : MonoBehaviour
     public void View()
     {
         FishData data = aquarium != null ? aquarium.GetCurrentFishData() : null;
-        if (data == null || !data.unlocked)
+        if (data == null)
+            return;
+
+        currentFishInstance = aquarium.GetCurrentFishInstance();
+        if (currentFishInstance != null)
         {
-            infoText.text = "";
+            currentFish = currentFishInstance.GetComponent<Fish>();
+            currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
+        }
+
+        // Si el pez está bloqueado
+        if (!data.unlocked)
+        {
+            if (currentRenderer != null)
+                currentRenderer.enabled = false;
+
+            infoText.gameObject.SetActive(true);
+            infoText.text = "???";
             return;
         }
 
-        currentFishInstance = aquarium.GetCurrentFishInstance();
-        if (currentFishInstance == null) return;
-
-        currentFish = currentFishInstance.GetComponent<Fish>();
-        currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
-
+        // Si el pez está desbloqueado
         if (currentRenderer != null)
             currentRenderer.enabled = true;
 
@@ -78,5 +92,24 @@ public class FishInfoPanel : MonoBehaviour
 
         if (currentFish != null)
             currentFish.OnSpawn();
+    }
+
+    private void ResetVisualState()
+    {
+        // Limpia texto
+        if (infoText != null)
+        {
+            infoText.text = "";
+            infoText.gameObject.SetActive(false);
+        }
+
+        // Vuelve a mostrar el pez si corresponde
+        currentFishInstance = aquarium != null ? aquarium.GetCurrentFishInstance() : null;
+        if (currentFishInstance != null)
+        {
+            currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
+            if (currentRenderer != null)
+                currentRenderer.enabled = true;
+        }
     }
 }

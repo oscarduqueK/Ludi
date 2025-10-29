@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class GameInitializer : MonoBehaviour
 {
-    
     void Awake()
     {
         StartCoroutine(Wait(1.0f));
@@ -26,6 +25,11 @@ public class GameInitializer : MonoBehaviour
             fuGO.AddComponent<fishUnlockement>();
             DontDestroyOnLoad(fuGO);
         }
+    }
+    private void Start()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
     public IEnumerator Wait(float time)
     {
