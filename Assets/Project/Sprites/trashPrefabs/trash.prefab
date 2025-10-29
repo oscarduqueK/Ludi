@@ -197,5 +197,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitByBallSound: {fileID: 8300000, guid: 8889f779adf860c429592f3491ef57bf, type: 3}
-  hitByOtherSound: {fileID: 8300000, guid: 6d93d404b5b4d894ba713ba901c2c07c, type: 3}
+  hitByOtherSound: {fileID: 8300000, guid: f12bcebdf0b388c41b7a96ac9de79e4d, type: 3}
   outputMixerGroup: {fileID: 4669757803302328662, guid: 83ba6699b04812e4db36e5f7b505a6c7, type: 2}
