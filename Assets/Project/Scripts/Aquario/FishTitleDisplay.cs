@@ -4,12 +4,15 @@ using TMPro;
 
 public class FishTitleDisplay : MonoBehaviour
 {
+    public Aquarium aquarium;      // referencia al script Aquarium
     public Image imageText;
 
     private void Update()
     {
-        int fishId = PlayerPrefs.GetInt("LastUnlockedFish", -1);
-        if (fishId == -1) return;
+        if (aquarium == null || aquarium.GetCurrentFishData() == null)
+            return;
+
+        int fishId = aquarium.GetCurrentFishIndex(); //nuevo método para obtener el índice
 
         switch (fishId)
         {

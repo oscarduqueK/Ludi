@@ -135,4 +135,9 @@ public class Aquarium : MonoBehaviour
     {
         return currentFishInstance;
     }
+
+    public int GetCurrentFishIndex()
+    {
+        return currentIndex;
+    }
 }

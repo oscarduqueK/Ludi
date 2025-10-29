@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c10f2ff158a2740a2a49ca36025461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aquarium: {fileID: 965964597}
   imageText: {fileID: 741776542}
 --- !u!1 &73113572
 GameObject:
@@ -988,8 +989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.5, y: 383}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -8.38, y: 349.87}
+  m_SizeDelta: {x: 362.15, y: 172.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741776542
 MonoBehaviour:
