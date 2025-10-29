@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio; // 👈 Necesario para usar AudioMixerGroup
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(HingeJoint2D))]
 [RequireComponent(typeof(AudioSource))]
@@ -23,8 +23,13 @@ public class FlipperMovement2D : MonoBehaviour
     private JointMotor2D motor;
     private JointAngleLimits2D limits;
     private AudioSource audioSource;
+
+    // 🔹 Variables de control
     private bool pressed;
     private bool wasPressed;
+
+    // 🔹 Variables para control por botón
+    private bool buttonPressed = false;
 
     void Awake()
     {
@@ -51,7 +56,8 @@ public class FlipperMovement2D : MonoBehaviour
 
     void Update()
     {
-        pressed = Input.GetKey(key);
+        // 🔹 Combina teclado y botón de UI
+        pressed = Input.GetKey(key) || buttonPressed;
 
         if (pressed && !wasPressed)
         {
@@ -72,5 +78,16 @@ public class FlipperMovement2D : MonoBehaviour
     {
         if (flipperSound == null) return;
         audioSource.PlayOneShot(flipperSound);
+    }
+
+    // 🔹 Métodos públicos para los botones de UI
+    public void Press()
+    {
+        buttonPressed = true;
+    }
+
+    public void Release()
+    {
+        buttonPressed = false;
     }
 }
