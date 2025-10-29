@@ -10,10 +10,26 @@ public class FishInfoPanel : MonoBehaviour
     private SpriteRenderer currentRenderer;
     private Fish currentFish;
 
-    void Start()
+    private void OnEnable()
     {
-        if (infoText == null)
-            infoText = FindAnyObjectByType<TextMeshProUGUI>();
+        // Suscribirse al evento
+        Aquarium.OnFishChanged += ClearInfo;
+    }
+
+    private void OnDisable()
+    {
+        // Evitar errores al salir de escena
+        Aquarium.OnFishChanged -= ClearInfo;
+    }
+
+    // Se ejecuta automáticamente al cambiar de pez
+    private void ClearInfo()
+    {
+        if (infoText != null)
+        {
+            infoText.text = "";
+            infoText.gameObject.SetActive(false);
+        }
     }
 
     public void Learn()
@@ -21,7 +37,7 @@ public class FishInfoPanel : MonoBehaviour
         FishData data = aquarium != null ? aquarium.GetCurrentFishData() : null;
         if (data == null || !data.unlocked)
         {
-            infoText.text = "";
+            infoText.text = "Encara no has desbloquejat aquest peix";
             return;
         }
 
@@ -31,13 +47,13 @@ public class FishInfoPanel : MonoBehaviour
         currentFish = currentFishInstance.GetComponent<Fish>();
         currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
 
-        // Ocultar el pez visualmente
         if (currentRenderer != null)
             currentRenderer.enabled = false;
 
-        // Mostrar texto
         infoText.gameObject.SetActive(true);
-        infoText.text = currentFish != null ? currentFish.GetInfoString() : $"<b>{data.fishName}</b>\n\n(Info no disponible)";
+        infoText.text = currentFish != null
+            ? currentFish.GetInfoString()
+            : $"<b>{data.fishName}</b>\n\n(Info no disponible)";
     }
 
     public void View()
@@ -55,14 +71,11 @@ public class FishInfoPanel : MonoBehaviour
         currentFish = currentFishInstance.GetComponent<Fish>();
         currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
 
-        // Mostrar pez
         if (currentRenderer != null)
             currentRenderer.enabled = true;
 
-        // Ocultar texto
         infoText.gameObject.SetActive(false);
 
-        // Reanudar comportamiento
         if (currentFish != null)
             currentFish.OnSpawn();
     }

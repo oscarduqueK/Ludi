@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Aquarium : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Aquarium : MonoBehaviour
     private List<FishData> allFish;
     private int currentIndex = 0;
     private GameObject currentFishInstance;
+
+    // Nuevo evento
+    public static event Action OnFishChanged;
 
     void Start()
     {
@@ -68,9 +72,8 @@ public class Aquarium : MonoBehaviour
 
         if (!isUnlocked)
         {
-            infoText.text = "???";
+            //infoText.text = "???";
             Debug.Log($"Pez {data.fishName} bloqueado.");
-            return;
         }
         else
         {
@@ -92,18 +95,17 @@ public class Aquarium : MonoBehaviour
             fishLogic.OnSpawn();
         }
 
-        
+        // Dispara el evento cada vez que se cambia de pez
+        OnFishChanged?.Invoke();
     }
 
     public FishData GetCurrentFishData()
     {
         if (allFish == null || allFish.Count == 0) return null;
-        // asegúrate de que currentIndex esté dentro de rango
         currentIndex = Mathf.Clamp(currentIndex, 0, allFish.Count - 1);
         return allFish[currentIndex];
     }
 
-    
     public GameObject GetCurrentFishInstance()
     {
         return currentFishInstance;

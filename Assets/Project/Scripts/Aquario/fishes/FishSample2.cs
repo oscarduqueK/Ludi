@@ -9,7 +9,11 @@ public class FishSample2 : Fish
             return "???";
 
         // Texto personalizado para este pez
-        return "Nom: Peix Volador\nEdat: 3 anys.";
+        return "Nom: Peix Volador\n" +
+            "Nom cientific: Exocoetidae\n" +
+            "Habitat: Aigües calides del Tropic\n" +
+            "Pes: 250 grams\n" +
+            "Mida: 25 cm\n";
     }
 
     public void ViewInfo(TextMeshProUGUI infoText)

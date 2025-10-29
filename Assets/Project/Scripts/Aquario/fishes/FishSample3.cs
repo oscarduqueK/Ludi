@@ -9,7 +9,11 @@ public class FishSample3 : Fish
             return "???";
 
         // Texto personalizado para este pez
-        return "Nom: Tonyina\nEdat: 20 anys.";
+        return "Nom: Tonyina\n" +
+            "Nom cientific: Thunnus thynnus\n" +
+            "Habitat: Atlantic i Mediterrani\n" +
+            "Pes: 200 kg\n" +
+            "Mida: 2 metres\n";
     }
 
     public void ViewInfo(TextMeshProUGUI infoText)
@@ -26,7 +30,7 @@ public class FishSample3 : Fish
         {
             Debug.Log($"{fishName} ha aparecido en el acuario (desbloqueado).");
             if (animator != null)
-                animator.Play("AtunIdle");
+                animator.Play("atunIdle");
         }
     }
 
