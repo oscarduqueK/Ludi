@@ -7,7 +7,7 @@ public class trashmanagement : MonoBehaviour
     public float spawnInterval;
     public List<Transform> spawnPoint;
 
-    public levelConfig currentLevel; // se crea automáticamente
+    public levelConfig currentLevel;
     public int spawnPointIndex;
 
     private float timer;

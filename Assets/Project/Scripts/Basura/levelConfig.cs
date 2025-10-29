@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class levelConfig
 {
-    public int fishToUnlock = -1; //FishSample
+    public int fishToUnlock = -1;
 
     public virtual int GetFishId()
     {
-        Debug.Log("Niga");
         return -1;
     }
 
