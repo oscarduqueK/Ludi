@@ -15,7 +15,7 @@ public class level1 : levelConfig
     public override void SpawnTrash(trashmanagement generator)
     {
         //Basura necesaria para ganar
-        GameManager.Instance.requiredTrashToWin = 1;
+        GameManager.Instance.requiredTrashToWin = 5;
 
         //Intervalo y verificación de funcionamiento
         if (generator.trashPrefabs.Count == 0) return;

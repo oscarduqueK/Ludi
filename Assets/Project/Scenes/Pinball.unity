@@ -319,6 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee42f2b5931f6bd49876223ed6f6043e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceSound: {fileID: 8300000, guid: 3afe1b11dd490b0438d8b10ebc5463e3, type: 3}
+  outputMixerGroup: {fileID: 1708927639465537201, guid: 83ba6699b04812e4db36e5f7b505a6c7, type: 2}
 --- !u!58 &135989099
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -743,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &511745511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,8 +768,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 861826300b919f146a6ca7ef11435bbc, type: 2}
+  m_sharedMaterial: {fileID: -5248613221518285938, guid: 861826300b919f146a6ca7ef11435bbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -861,7 +863,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -5248613221518285938, guid: 861826300b919f146a6ca7ef11435bbc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -899,7 +901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7, y: 10.29}
+  m_AnchoredPosition: {x: 3.7, y: 10.65}
   m_SizeDelta: {x: 1.2804, y: 0.9331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
@@ -3265,6 +3267,10 @@ MonoBehaviour:
   fu: {fileID: 2108351412}
   requiredTrashToWin: 1
   vidas: 3
+  victoryClip: {fileID: 8300000, guid: 277a0f97071f4f24f9ce129e15d61b54, type: 3}
+  defeatClip: {fileID: 8300000, guid: b2c1b8019813fea4894423b16be70c3c, type: 3}
+  victoryMixerGroup: {fileID: 8659892944065860988, guid: 83ba6699b04812e4db36e5f7b505a6c7, type: 2}
+  defeatMixerGroup: {fileID: 781089883198947391, guid: 83ba6699b04812e4db36e5f7b505a6c7, type: 2}
 --- !u!114 &2108351412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3277,6 +3283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8026e9f85c1be44a8cff046346084a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishDatabase: {fileID: 0}
+  lastUnlockedId: -1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

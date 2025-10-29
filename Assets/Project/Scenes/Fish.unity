@@ -2002,7 +2002,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1200525332}
   - {fileID: 103284333}
-  - {fileID: 299845584}
   - {fileID: 1094285540}
+  - {fileID: 299845584}
+  - {fileID: 1200525332}
