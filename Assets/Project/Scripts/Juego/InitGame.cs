@@ -9,7 +9,7 @@ public class GameInitializer : MonoBehaviour
     void Awake()
     {
         StartCoroutine(Wait(1.0f));
-        // Singleton: evitar duplicados del GameInitializer
+
         GameInitializer existing = FindAnyObjectByType<GameInitializer>();
         if (existing != null && existing != this)
         {
@@ -17,9 +17,8 @@ public class GameInitializer : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject); // persistente
+        DontDestroyOnLoad(gameObject);
 
-        // Crear fishUnlockement si no existe
         if (fishUnlockement.Instance == null)
         {
             GameObject fuGO = new GameObject("fishUnlockement");
