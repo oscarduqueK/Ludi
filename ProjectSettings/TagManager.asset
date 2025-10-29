@@ -2,13 +2,23 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Ball
+  - Basura
+  - Flipper
+  - Entorno
+  - Ground
+  - Resume
+  - Options
+  - Exit
+  - Rampa
+  - End
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Peixos
   - Water
   - UI
   - 
@@ -41,3 +51,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bottom
+    uniqueID: 1071760309
+    locked: 0
+  - name: Mid
+    uniqueID: 4085426435
+    locked: 0
+  - name: Top
+    uniqueID: 4140560885
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  - hola
