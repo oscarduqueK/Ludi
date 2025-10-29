@@ -11,8 +11,11 @@ public class Fish : MonoBehaviour
     public Animator animator;
     public TextMeshProUGUI nameText;
 
-    [HideInInspector]
     public bool isInitialized = false;
+
+    [SerializeField] public bool isFishUnlocked = false;
+    public bool IsFishUnlocked => isFishUnlocked;
+
 
     public virtual void Initialize(FishData data)
     {
@@ -31,7 +34,15 @@ public class Fish : MonoBehaviour
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
+        isFishUnlocked = data.unlocked;
+
         isInitialized = true;
+    }
+
+    public virtual string GetInfoString()
+    {
+        if (!isFishUnlocked) return "???";
+        return fishName ?? "Unknown Fish";
     }
 
     public virtual void OnSpawn()
@@ -42,6 +53,8 @@ public class Fish : MonoBehaviour
 
     public virtual void OnUnlock()
     {
+        isFishUnlocked = true;
+
         if (animator != null)
             animator.SetTrigger("Unlock");
     }

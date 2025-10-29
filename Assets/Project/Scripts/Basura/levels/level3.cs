@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class level3 : levelConfig
+public class level4 : levelConfig
 {
     public override void SetupLevel(trashmanagement generator)
     {
@@ -16,7 +16,7 @@ public class level3 : levelConfig
     public override void SpawnTrash(trashmanagement generator)
     {
         //Basura necesaria para ganar
-        GameManager.Instance.requiredTrashToWin = 1;
+        GameManager.Instance.requiredTrashToWin = 10;
 
         //Intervalo y verificación de funcionamiento
         if (generator.trashPrefabs.Count == 0) return;
