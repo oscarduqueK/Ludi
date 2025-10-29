@@ -1,76 +1,69 @@
 ﻿using UnityEngine;
 using TMPro;
-using System.Collections;
 
 public class FishInfoPanel : MonoBehaviour
 {
     public Aquarium aquarium;
     public TextMeshProUGUI infoText;
-    public Transform fishContainer;
-    public float rotationSpeed = 50f;
 
     private GameObject currentFishInstance;
+    private SpriteRenderer currentRenderer;
+    private Fish currentFish;
+
+    void Start()
+    {
+        if (infoText == null)
+            infoText = FindAnyObjectByType<TextMeshProUGUI>();
+    }
 
     public void Learn()
     {
-        if (currentFishInstance != null)
-            Destroy(currentFishInstance);
-
         FishData data = aquarium != null ? aquarium.GetCurrentFishData() : null;
-
         if (data == null || !data.unlocked)
         {
             infoText.text = "";
             return;
         }
 
-        if (data.prefab != null)
-        {
-            currentFishInstance = Instantiate(data.prefab, fishContainer.position, Quaternion.identity, fishContainer);
-            Fish fishComp = currentFishInstance.GetComponent<Fish>();
-            if (fishComp != null)
-                infoText.text = fishComp.GetInfoString();
-            else
-                infoText.text = $"<b>{data.fishName}</b>\n\n(Info no disponible)";
-        }
-        else
-        {
-            infoText.text = $"<b>{data.fishName}</b>\n\n(Info no disponible)";
-        }
+        currentFishInstance = aquarium.GetCurrentFishInstance();
+        if (currentFishInstance == null) return;
 
-        infoText.transform.SetParent(fishContainer, true);
+        currentFish = currentFishInstance.GetComponent<Fish>();
+        currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
+
+        // Ocultar el pez visualmente
+        if (currentRenderer != null)
+            currentRenderer.enabled = false;
+
+        // Mostrar texto
+        infoText.gameObject.SetActive(true);
+        infoText.text = currentFish != null ? currentFish.GetInfoString() : $"<b>{data.fishName}</b>\n\n(Info no disponible)";
     }
 
     public void View()
     {
-        infoText.text = "";
         FishData data = aquarium != null ? aquarium.GetCurrentFishData() : null;
-
-        if (data == null || !data.unlocked || data.prefab == null)
+        if (data == null || !data.unlocked)
         {
-            if (currentFishInstance != null)
-            {
-                Destroy(currentFishInstance);
-                currentFishInstance = null;
-            }
+            infoText.text = "";
             return;
         }
 
-        if (currentFishInstance != null)
-            Destroy(currentFishInstance);
+        currentFishInstance = aquarium.GetCurrentFishInstance();
+        if (currentFishInstance == null) return;
 
-        currentFishInstance = Instantiate(data.prefab, fishContainer.position, Quaternion.identity, fishContainer);
-        Fish fishComp = currentFishInstance.GetComponent<Fish>();
-        if (fishComp != null)
-            //fishComp.Initialize(FishData data);
-            fishComp.OnSpawn();
+        currentFish = currentFishInstance.GetComponent<Fish>();
+        currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
+
+        // Mostrar pez
+        if (currentRenderer != null)
+            currentRenderer.enabled = true;
+
+        // Ocultar texto
+        infoText.gameObject.SetActive(false);
+
+        // Reanudar comportamiento
+        if (currentFish != null)
+            currentFish.OnSpawn();
     }
-
-    //void Update()
-    //{
-    //    if (currentFishInstance != null)
-    //    {
-    //        fishContainer.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
-    //    }
-    //}
 }

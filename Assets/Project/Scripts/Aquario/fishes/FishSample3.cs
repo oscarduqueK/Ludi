@@ -3,12 +3,13 @@ using TMPro;
 
 public class FishSample3 : Fish
 {
-    public bool isFishUnlocked = false;
     public override string GetInfoString()
     {
-        if (!isFishUnlocked)
+        if (!isFishUnlocked) // field heredado
             return "???";
-        return fishName ?? "Unknown Fish";
+
+        // Texto personalizado para este pez
+        return "Nom: Tonyina\nEdat: 20 anys.";
     }
 
     public void ViewInfo(TextMeshProUGUI infoText)
@@ -25,7 +26,7 @@ public class FishSample3 : Fish
         {
             Debug.Log($"{fishName} ha aparecido en el acuario (desbloqueado).");
             if (animator != null)
-                animator.Play("nemoIdle");
+                animator.Play("AtunIdle");
         }
     }
 

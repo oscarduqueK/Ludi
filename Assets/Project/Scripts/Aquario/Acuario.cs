@@ -23,6 +23,9 @@ public class Aquarium : MonoBehaviour
             return;
         }
 
+        if (infoText == null)
+            infoText = FindAnyObjectByType<TextMeshProUGUI>();
+
         allFish = FishDatabase.Instance.fishes;
         currentIndex = 0;
         ShowFish(currentIndex);
@@ -71,7 +74,7 @@ public class Aquarium : MonoBehaviour
         }
         else
         {
-            Destroy(infoText);
+            infoText.gameObject.SetActive(false);
         }
 
         if (data.prefab == null)

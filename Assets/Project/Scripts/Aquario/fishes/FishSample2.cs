@@ -3,14 +3,13 @@ using TMPro;
 
 public class FishSample2 : Fish
 {
-    public bool isFishUnlocked = false;
     public override string GetInfoString()
     {
         if (!isFishUnlocked) // field heredado
             return "???";
 
         // Texto personalizado para este pez
-        return $"<b>{fishName}</b>\nPaco es un pez majete que hace cosas guays.";
+        return "Nom: Peix Volador\nEdat: 3 anys.";
     }
 
     public void ViewInfo(TextMeshProUGUI infoText)

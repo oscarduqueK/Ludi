@@ -12,7 +12,10 @@ public class Fish : MonoBehaviour
     public TextMeshProUGUI nameText;
 
     public bool isInitialized = false;
-    public bool isFishUnlocked = false; 
+
+    [SerializeField] public bool isFishUnlocked = false;
+    public bool IsFishUnlocked => isFishUnlocked;
+
 
     public virtual void Initialize(FishData data)
     {

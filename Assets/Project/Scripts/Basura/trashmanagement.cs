@@ -40,6 +40,7 @@ public class trashmanagement : MonoBehaviour
             case 1: return new level1();
             case 2: return new level2();
             case 3: return new level3();
+            case 4: return new level4();
 
             //case 4: return new level4();
             //case 5: return new level5();
