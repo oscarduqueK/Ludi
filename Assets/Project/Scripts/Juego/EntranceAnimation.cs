@@ -7,7 +7,6 @@ public class EntranceAnimation : MonoBehaviour
 
     void Update()
     {
-        // Mueve el objeto hacia la derecha constantemente
         transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 

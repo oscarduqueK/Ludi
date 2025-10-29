@@ -5,10 +5,9 @@ public class FishSample3 : Fish
 {
     public override string GetInfoString()
     {
-        if (!isFishUnlocked) // field heredado
+        if (!isFishUnlocked)
             return "???";
 
-        // Texto personalizado para este pez
         return "Nom: Tonyina\n" +
             "Nom cientific: Thunnus thynnus\n" +
             "Habitat: Atlantic i Mediterrani\n" +

@@ -26,7 +26,6 @@ public class fishUnlockement : MonoBehaviour
             return;
         }
 
-        // Asignar la base de datos automáticamente
         if (fishDatabase == null)
         {
             fishDatabase = FishDatabase.Instance;
@@ -37,7 +36,6 @@ public class fishUnlockement : MonoBehaviour
 
     public bool UnlockSequence(int fishId)
     {
-        // Accedemos a la base de datos directamente desde la instancia singleton
         FishData data = FishDatabase.Instance.GetFishDataById(fishId);
 
         if (data == null)
@@ -46,14 +44,12 @@ public class fishUnlockement : MonoBehaviour
             return false;
         }
 
-        if (data.unlocked) // ya desbloqueado
+        if (data.unlocked)
             return false;
 
-        // Guardar en PlayerPrefs
         PlayerPrefs.SetInt($"Fish_Unlocked_{fishId}", 1);
         PlayerPrefs.Save();
 
-        // Marcar en memoria
         data.unlocked = true;
         lastUnlockedId = fishId;
 

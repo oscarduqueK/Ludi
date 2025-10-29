@@ -14,7 +14,7 @@ public class level1 : levelConfig
     public override void SpawnTrash(trashmanagement generator)
     {
 
-        GameManager.Instance.requiredTrashToWin = 15;
+        GameManager.Instance.requiredTrashToWin = 5;
 
         if (generator.trashPrefabs.Count == 0) return;
         generator.spawnInterval = 2.5f;

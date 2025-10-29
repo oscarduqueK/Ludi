@@ -4,7 +4,7 @@ using TMPro;
 public class FishInfoPanel : MonoBehaviour
 {
     public Aquarium aquarium;
-    public TextMeshProUGUI infoText; // único texto usado para todo
+    public TextMeshProUGUI infoText;
 
     private GameObject currentFishInstance;
     private SpriteRenderer currentRenderer;
@@ -20,7 +20,6 @@ public class FishInfoPanel : MonoBehaviour
         Aquarium.OnFishChanged -= ClearInfo;
     }
 
-    // Limpia el texto y muestra el pez correcto al cambiar de flecha
     private void ClearInfo()
     {
         ResetVisualState();
@@ -39,7 +38,6 @@ public class FishInfoPanel : MonoBehaviour
             currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
         }
 
-        // Si el pez está bloqueado
         if (!data.unlocked)
         {
             if (currentRenderer != null)
@@ -50,7 +48,6 @@ public class FishInfoPanel : MonoBehaviour
             return;
         }
 
-        // Si el pez está desbloqueado
         if (currentRenderer != null)
             currentRenderer.enabled = false;
 
@@ -73,7 +70,6 @@ public class FishInfoPanel : MonoBehaviour
             currentRenderer = currentFishInstance.GetComponent<SpriteRenderer>();
         }
 
-        // Si el pez está bloqueado
         if (!data.unlocked)
         {
             if (currentRenderer != null)
@@ -84,7 +80,6 @@ public class FishInfoPanel : MonoBehaviour
             return;
         }
 
-        // Si el pez está desbloqueado
         if (currentRenderer != null)
             currentRenderer.enabled = true;
 
@@ -96,14 +91,13 @@ public class FishInfoPanel : MonoBehaviour
 
     private void ResetVisualState()
     {
-        // Limpia texto
+
         if (infoText != null)
         {
             infoText.text = "";
             infoText.gameObject.SetActive(false);
         }
 
-        // Vuelve a mostrar el pez si corresponde
         currentFishInstance = aquarium != null ? aquarium.GetCurrentFishInstance() : null;
         if (currentFishInstance != null)
         {

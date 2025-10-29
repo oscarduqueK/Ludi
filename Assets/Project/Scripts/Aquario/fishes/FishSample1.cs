@@ -5,10 +5,9 @@ public class FishSample1 : Fish
 {
     public override string GetInfoString()
     {
-        if (!isFishUnlocked) // field heredado
+        if (!isFishUnlocked)
             return "???";
 
-        // Texto personalizado para este pez
         return "Nom: Peix Pallasso\n" +
             "Nom cientific: Amphiprioninae\n" +
             "Habitat: Ocea Indic i Pacific\n" +

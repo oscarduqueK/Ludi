@@ -27,7 +27,6 @@ public class FishUnlockUI : MonoBehaviour
             return;
         }
 
-        // Obtener datos del pez desde la base de datos
         FishData data = FishDatabase.Instance.GetFishData(fishId);
 
         if (data == null)
@@ -37,7 +36,6 @@ public class FishUnlockUI : MonoBehaviour
             return;
         }
 
-        // Instanciar el prefab
         GameObject fishPrefab = data.prefab;
         if (fishPrefab == null)
         {
@@ -48,24 +46,20 @@ public class FishUnlockUI : MonoBehaviour
         GameObject instance = Instantiate(fishPrefab, spawnPoint.position, Quaternion.identity);
         currentFishInstance = instance.GetComponent<Fish>();
 
-        // Inicializar y mostrar animación
         currentFishInstance.Initialize(data);
         currentFishInstance.isInitialized = true;
 
-        // Esto asegura que se actualice isFishUnlocked
         if (data.unlocked)
         {
-            currentFishInstance.OnUnlock(); // <--- Llamada que faltaba
+            currentFishInstance.OnUnlock();
         }
 
         currentFishInstance.OnSpawn();
 
-        // Actualizar UI
         titleText.text = "¡Nuevo pez desbloqueado!";
         fishNameText.text = data.fishName;
     }
 
-    // Llamada desde el botón "Volver al menú"
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -9,7 +9,6 @@ public class Aquarium : MonoBehaviour
     [Header("Referencias")]
     public Transform spawnPoint;
     public TextMeshProUGUI infoText;
-    //public TextMeshProUGUI loinfoText;
 
     [Header("Opciones")]
     public float transitionDelay = 0.2f;
@@ -18,12 +17,11 @@ public class Aquarium : MonoBehaviour
     private int currentIndex = 0;
     private GameObject currentFishInstance;
 
-    // Nuevo evento
     public static event System.Action OnFishChanged;
 
     void Start()
     {
-        Time.timeScale = 1f; // <-- esto es CLAVE
+        Time.timeScale = 1f;
      
         Debug.Log("TimeScale actual al entrar en Acuario: " + Time.timeScale);
 
@@ -47,7 +45,7 @@ public class Aquarium : MonoBehaviour
         if (currentIndex >= allFish.Count)
             currentIndex = 0;
 
-        infoText.gameObject.SetActive(false); // Limpieza visual
+        infoText.gameObject.SetActive(false);
         ShowFish(currentIndex);
     }
 
@@ -57,7 +55,7 @@ public class Aquarium : MonoBehaviour
         if (currentIndex < 0)
             currentIndex = allFish.Count - 1;
 
-        infoText.gameObject.SetActive(false); // Limpieza visual
+        infoText.gameObject.SetActive(false);
         ShowFish(currentIndex);
     }
 
@@ -69,7 +67,6 @@ public class Aquarium : MonoBehaviour
             return;
         }
 
-        // Elimina el pez anterior (si existía)
         if (currentFishInstance != null)
         {
             Destroy(currentFishInstance);
@@ -82,7 +79,6 @@ public class Aquarium : MonoBehaviour
         FishData data = allFish[index];
         bool isUnlocked = data.unlocked;
 
-        // Si el pez está BLOQUEADO
         if (!isUnlocked)
         {
             infoText.gameObject.SetActive(true);
@@ -91,7 +87,6 @@ public class Aquarium : MonoBehaviour
             return;
         }
 
-        // Si el pez está DESBLOQUEADO
         infoText.gameObject.SetActive(false);
 
         if (data.prefab == null)
@@ -100,17 +95,14 @@ public class Aquarium : MonoBehaviour
             return;
         }
 
-        // Instanciar el prefab del pez
         currentFishInstance = Instantiate(data.prefab, spawnPoint.position, Quaternion.identity);
 
-        // Inicializar y activar animación
         Fish fishLogic = currentFishInstance.GetComponent<Fish>();
         if (fishLogic != null)
         {
             fishLogic.Initialize(data);
             fishLogic.OnSpawn();
 
-            // Asegurarse de que el Animator esté activo
             Animator anim = fishLogic.GetComponentInChildren<Animator>();
             if (anim != null)
             {

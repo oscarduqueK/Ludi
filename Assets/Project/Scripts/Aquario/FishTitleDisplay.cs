@@ -4,7 +4,7 @@ using TMPro;
 
 public class FishTitleDisplay : MonoBehaviour
 {
-    public Aquarium aquarium;      // referencia al script Aquarium
+    public Aquarium aquarium;
     public Image imageText;
 
     private void Update()
@@ -12,7 +12,7 @@ public class FishTitleDisplay : MonoBehaviour
         if (aquarium == null || aquarium.GetCurrentFishData() == null)
             return;
 
-        int fishId = aquarium.GetCurrentFishIndex(); //nuevo método para obtener el índice
+        int fishId = aquarium.GetCurrentFishIndex();
 
         switch (fishId)
         {
