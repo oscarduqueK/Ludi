@@ -25,6 +25,12 @@ public class MenuPausaUI : MonoBehaviour
             SceneManager.LoadScene("MenuOptions", LoadSceneMode.Additive);
         }
     }
+    public void GoToPausa()
+    {
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("MenuPausa", LoadSceneMode.Additive);
+    }
+
     public void GoBackFromOptions()
     {
             SceneManager.UnloadSceneAsync("MenuOptions");

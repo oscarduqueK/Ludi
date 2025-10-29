@@ -69,16 +69,9 @@ public class GameManager : MonoBehaviour
 
         if (vidas <= 0)
         {
-            StartCoroutine(GameOverConRetraso());
+            GameOver(false);
         }
     }
-
-    private IEnumerator GameOverConRetraso()
-    {
-        yield return new WaitForSeconds(1f);
-        GameOver(false);
-    }
-
     public void GameOver(bool won)
     {
         if (gameEnded) return;

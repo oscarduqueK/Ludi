@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 1373715647}
   - component: {fileID: 1373715646}
   m_Layer: 0
-  m_Name: djdjjytejj_0
+  m_Name: Pantalla de Carga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
