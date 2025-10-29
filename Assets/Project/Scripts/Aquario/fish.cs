@@ -10,6 +10,7 @@ public class Fish : MonoBehaviour
     [Header("Componentes opcionales")]
     public Animator animator;
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI InterrogationText;
 
     public bool isInitialized = false;
 

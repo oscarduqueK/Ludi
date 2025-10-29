@@ -6,10 +6,14 @@ public class FishSample4 : Fish
     public override string GetInfoString()
     {
         if (!isFishUnlocked) // field heredado
-            return "???";
+            return "";
 
         // Texto personalizado para este pez
-        return "Nom: Verat\nEdat: 7 anys.";
+        return "Nom: Verat\n" +
+            "Nom cientific: Scomber scombrus\n" +
+            "Habitat: Atlantic i Mediterrani\n" +
+            "Pes: 750 grams\n" +
+            "Mida: 35 cm\n";
     }
 
     public void ViewInfo(TextMeshProUGUI infoText)

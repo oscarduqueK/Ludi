@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class GameInitializer : MonoBehaviour
 {
+    
     void Awake()
     {
         StartCoroutine(Wait(1.0f));
@@ -26,14 +27,6 @@ public class GameInitializer : MonoBehaviour
             DontDestroyOnLoad(fuGO);
         }
     }
-
-    private void Start()
-    {
-        StartCoroutine(Wait(2.0f));
-        // Cargar la siguiente escena
-        SceneManager.LoadScene("Menu");
-    }
-
     public IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);

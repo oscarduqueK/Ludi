@@ -9,7 +9,11 @@ public class FishSample1 : Fish
             return "???";
 
         // Texto personalizado para este pez
-        return "Nom: Peix Pallaso\nEdat: 10 anys\n.";
+        return "Nom: Peix Pallasso\n" +
+            "Nom cientific: Amphiprioninae\n" +
+            "Habitat: Ocea Indic i Pacific\n" +
+            "Pes: 25 grams\n" +
+            "Mida: 10 cm\n";
     }
 
     public void ViewInfo(TextMeshProUGUI infoText)

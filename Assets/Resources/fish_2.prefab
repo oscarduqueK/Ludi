@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: -209540861
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4182067641572155093, guid: 5a3ce4d65c0a96149b8c198110e34453, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a3ce4d65c0a96149b8c198110e34453, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.6, y: 7.62}
+  m_Size: {x: 5.15, y: 1.7954545}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,5 +127,6 @@ MonoBehaviour:
   fishName: Tonyina
   animator: {fileID: 2726827286892517752}
   nameText: {fileID: 0}
+  InterrogationText: {fileID: 0}
   isInitialized: 0
   isFishUnlocked: 0

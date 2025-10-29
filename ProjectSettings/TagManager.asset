@@ -13,6 +13,7 @@ TagManager:
   - Options
   - Exit
   - Rampa
+  - End
   layers:
   - Default
   - TransparentFX
